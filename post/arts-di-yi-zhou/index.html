@@ -1,0 +1,186 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ARTS-第一周 | Waterjiao</title>
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1561308606982">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://waterjiao.github.io">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1561308606982" alt="">
+  </a>
+  <h1 class="site-title">
+    Waterjiao
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              ARTS-第一周
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-06-24 ·
+              </time>
+              
+                <a href="https://waterjiao.github.io/tag/TEAG1uIJY" class="post-tag">
+                  # Code
+                </a>
+              
+            </div>
+            
+              <div class="post-feature-image" style="background-image: url('https://waterjiao.github.io/post-images/arts-di-yi-zhou.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<h4 id="两数之和two-sum">两数之和（Two Sum）</h4>
+<blockquote>
+<p>两数之和，题目难度为 Easy</p>
+</blockquote>
+<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<!-- more -->
+<p>思路：直接暴力求出，待后续优化</p>
+<pre><code>class TwoSum {
+    public int[] twoSum(int[] nums, int target) {
+        for (int i = 0; i &lt; nums.length; ++i) {
+            for (int j = i + 1; j &lt; nums.length; ++j) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return null;
+    }
+}
+</code></pre>
+<h3 id="review">Review</h3>
+<blockquote>
+<p>暂无，待补上</p>
+</blockquote>
+<h3 id="tip">Tip</h3>
+<p>####Python模块安装到Site-packages
+使用“setuptools”将模块安装到site-packages</p>
+<ol>
+<li>创建一个发布描述</li>
+<li>生成一个发布文件</li>
+<li>安装发布文件
+例如：下面我编写一个helloworld.py，就是helloworld，但是我又想在其他py文件中使用它，第一种方法：在同一目录下，直接import helloworld，第二种方法，放在解释器的site-package位置，第三种方法，放在标准库（当然不会），其实第一种还有就是from 不同目录 import helloworld</li>
+</ol>
+<pre><code class="language-python">def helloworld(name:str) -&gt; str:
+    return name+' said: helloworld'
+</code></pre>
+<p>按照第二种方法，模块安装到Site-package</p>
+<ol>
+<li>创建发布描述，要创建两个文件，这两个文件放在与helloworld.py文件的同一个文件夹中，第一个文件必须命名为setup.py</li>
+<li>另一个文件命名为README.txt
+下面来看一下setup.py中的内容</li>
+</ol>
+<pre><code class="language-python">from setuptools import setup
+setup(
+    name='helloworld',
+    version='1.0',
+    description='Someone say hello',
+    author='waterjiao',
+    author_email='78567xxxx@qq.com',
+    url='',
+    py_modules=['helloworld'],
+    )
+</code></pre>
+<p>之后输入命令：python3 setup.py sdist
+sdist作为一个参数
+形成helloworld-1.0.tar.gz
+最后完成第三步，发布
+python3 -m pip install helloworld-1.0.tar.gz</p>
+<p>###Share</p>
+<p>分享一篇关于SDN的吧，作者李呈，对于想了解OpenFlow协议的可以看看，<a href="https://www.sdnlab.com/1479.html">OpenFlow通信流程解读</a></p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://waterjiao.github.io/post/hello-gridea">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/waterjiao" target="_blank">Waterjiao</a> | 
+  <a class="rss" href="https://waterjiao.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
