@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-06-23T16:54:46.740Z</updated>
+    <updated>2019-06-30T16:03:18.302Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -10,6 +10,26 @@
     <logo>https://waterjiao.github.io/images/avatar.png</logo>
     <icon>https://waterjiao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Waterjiao</rights>
+    <entry>
+        <title type="html"><![CDATA[书单]]></title>
+        <id>https://waterjiao.github.io/post/shu-dan</id>
+        <link href="https://waterjiao.github.io/post/shu-dan">
+        </link>
+        <updated>2019-06-30T15:45:03.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>不知不觉就七月了，记录下看得书，争取每读完一本，输出一篇心得体会</p>
+</blockquote>
+<h3 id="技术"><strong>技术</strong></h3>
+<p>《码出高效 Java开发手册》
+《Spring Boot实战》
+《Java编程逻辑》
+《Head First 设计模式》</p>
+<h3 id="推理"><strong>推理</strong></h3>
+<p>《暗黑者四部曲》</p>
+<h3 id="文学"><strong>文学</strong></h3>
+<p>《荣宝斋》</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ARTS-第一周]]></title>
         <id>https://waterjiao.github.io/post/arts-di-yi-zhou</id>
