@@ -1,0 +1,207 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ARTS-第二周 | Waterjiao</title>
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1562075037139">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://waterjiao.github.io">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1562075037139" alt="">
+  </a>
+  <h1 class="site-title">
+    Waterjiao
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              ARTS-第二周
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-07-01 ·
+              </time>
+              
+                <a href="https://waterjiao.github.io/tag/tWfE2Yt2T" class="post-tag">
+                  # Study
+                </a>
+              
+                <a href="https://waterjiao.github.io/tag/TEAG1uIJY" class="post-tag">
+                  # Code
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<h4 id="两数之和two-sum">两数之和（Two Sum）</h4>
+<blockquote>
+<p>两数相加。题目难度为 Medium</p>
+</blockquote>
+<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。</p>
+<!-- more -->
+<p>思路：用单链表的方式实现两数相加，需要考虑的就是每一位相加后是否需要进位。新建一条单链表用于存储每个位数相加后的余数（模10），进位数参与到下一位的加法中，最后再做一次进位判断，返回结果单链表。</p>
+<pre><code>/*
+class ListNode{
+    int val;
+		ListNode next;
+		ListNode(int x){
+		    val = x;
+		}
+}
+*/
+class AddTwoNums {
+    public ListNode addTwoNums( ListNode l1, ListNode l2){
+		    ListNode node = new ListNode(0);
+				ListNode n1=l1, n2=l2, t=node;
+				int sum = 0;
+				while(n1!=null || n2!=null){
+				    sum /= 10;
+						if(n1!=null){
+						    sum += n1.val;
+								n1 = n1.next;
+						}
+						if(n2!=null){
+						    sum += n2.val;
+								n2 = n2.next;
+						}
+						t.next = new ListNode(sum%10);
+						t = t.next
+				}
+				if(sum/10 != 0) t = new ListNode(1);
+				
+				return node.next;
+		}
+}
+</code></pre>
+<h3 id="review">Review</h3>
+<blockquote>
+<p>暂无，待补上</p>
+</blockquote>
+<h3 id="tip">Tip</h3>
+<h4 id="python中参数传递时是按值传递呢还是按引用传递">Python中参数传递时，是按值传递呢，还是按引用传递？</h4>
+<p>首先先来看一段代码</p>
+<pre><code class="language-python">def double(arg):
+    print('Before: ',arg)
+    arg = arg*2
+    print('After: ',arg)
+</code></pre>
+<p>当传递一个数值时</p>
+<pre><code class="language-python">num = 2
+double(num)
+print(num)
+#输出还是2
+line = [1,2]
+double(line)
+print(line)
+#输出还是[1,2]
+</code></pre>
+<p>当在函数中稍稍做一点变化时</p>
+<pre><code class="language-python">def double(arg):
+    print('Before: ',arg)
+    arg = arg.append('More data')
+    print('After: ',arg)
+</code></pre>
+<p>再次调用double函数时</p>
+<pre><code class="language-python">line = [1,2]
+double(line)
+print(line)
+#输出[1,2,'More data']
+</code></pre>
+<p>奇怪的事情发生了，是不是？
+其实，根据实际情况，Python的函数参数语义既支持按值调用也支持按引用调用。
+Python中的变量是对象引用。可以把变量中存储的值认为是值的内存地址，而不是它真正的值。Python函数支持的调用语义可以更准确地称为按对象引用调用语义。
+解释器会查看对象引用指示的值的类型，如果变量是可变的（列表、字典和集合），就会应用按引用调用；如果变量是不可变的（字符串、整数和元组），就会按值传入函数。</p>
+<h3 id="share">Share</h3>
+<p>分享一篇关于注解的吧，作者将注解比作标签，可以很好得解释一下注解<a href="https://blog.csdn.net/shengzhu1/article/details/81271409">Java注解深入浅出</a></p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://waterjiao.github.io/post/shu-dan">
+              <h3 class="post-title">
+                书单
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/waterjiao" target="_blank">Waterjiao</a> | 
+  <a class="rss" href="https://waterjiao.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

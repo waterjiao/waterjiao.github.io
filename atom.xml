@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-06-30T16:03:18.302Z</updated>
+    <updated>2019-07-02T13:44:04.601Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -10,6 +10,104 @@
     <logo>https://waterjiao.github.io/images/avatar.png</logo>
     <icon>https://waterjiao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Waterjiao</rights>
+    <entry>
+        <title type="html"><![CDATA[ARTS-第二周]]></title>
+        <id>https://waterjiao.github.io/post/arts-di-er-zhou</id>
+        <link href="https://waterjiao.github.io/post/arts-di-er-zhou">
+        </link>
+        <updated>2019-07-01T14:06:40.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<h4 id="两数之和two-sum">两数之和（Two Sum）</h4>
+<blockquote>
+<p>两数相加。题目难度为 Medium</p>
+</blockquote>
+<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<h4 id="两数之和two-sum">两数之和（Two Sum）</h4>
+<blockquote>
+<p>两数相加。题目难度为 Medium</p>
+</blockquote>
+<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。</p>
+<!-- more -->
+<p>思路：用单链表的方式实现两数相加，需要考虑的就是每一位相加后是否需要进位。新建一条单链表用于存储每个位数相加后的余数（模10），进位数参与到下一位的加法中，最后再做一次进位判断，返回结果单链表。</p>
+<pre><code>/*
+class ListNode{
+    int val;
+		ListNode next;
+		ListNode(int x){
+		    val = x;
+		}
+}
+*/
+class AddTwoNums {
+    public ListNode addTwoNums( ListNode l1, ListNode l2){
+		    ListNode node = new ListNode(0);
+				ListNode n1=l1, n2=l2, t=node;
+				int sum = 0;
+				while(n1!=null || n2!=null){
+				    sum /= 10;
+						if(n1!=null){
+						    sum += n1.val;
+								n1 = n1.next;
+						}
+						if(n2!=null){
+						    sum += n2.val;
+								n2 = n2.next;
+						}
+						t.next = new ListNode(sum%10);
+						t = t.next
+				}
+				if(sum/10 != 0) t = new ListNode(1);
+				
+				return node.next;
+		}
+}
+</code></pre>
+<h3 id="review">Review</h3>
+<blockquote>
+<p>暂无，待补上</p>
+</blockquote>
+<h3 id="tip">Tip</h3>
+<h4 id="python中参数传递时是按值传递呢还是按引用传递">Python中参数传递时，是按值传递呢，还是按引用传递？</h4>
+<p>首先先来看一段代码</p>
+<pre><code class="language-python">def double(arg):
+    print('Before: ',arg)
+    arg = arg*2
+    print('After: ',arg)
+</code></pre>
+<p>当传递一个数值时</p>
+<pre><code class="language-python">num = 2
+double(num)
+print(num)
+#输出还是2
+line = [1,2]
+double(line)
+print(line)
+#输出还是[1,2]
+</code></pre>
+<p>当在函数中稍稍做一点变化时</p>
+<pre><code class="language-python">def double(arg):
+    print('Before: ',arg)
+    arg = arg.append('More data')
+    print('After: ',arg)
+</code></pre>
+<p>再次调用double函数时</p>
+<pre><code class="language-python">line = [1,2]
+double(line)
+print(line)
+#输出[1,2,'More data']
+</code></pre>
+<p>奇怪的事情发生了，是不是？
+其实，根据实际情况，Python的函数参数语义既支持按值调用也支持按引用调用。
+Python中的变量是对象引用。可以把变量中存储的值认为是值的内存地址，而不是它真正的值。Python函数支持的调用语义可以更准确地称为按对象引用调用语义。
+解释器会查看对象引用指示的值的类型，如果变量是可变的（列表、字典和集合），就会应用按引用调用；如果变量是不可变的（字符串、整数和元组），就会按值传入函数。</p>
+<h3 id="share">Share</h3>
+<p>分享一篇关于注解的吧，作者将注解比作标签，可以很好得解释一下注解<a href="https://blog.csdn.net/shengzhu1/article/details/81271409">Java注解深入浅出</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[书单]]></title>
         <id>https://waterjiao.github.io/post/shu-dan</id>
