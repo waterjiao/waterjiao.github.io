@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-07-02T13:44:04.601Z</updated>
+    <updated>2019-07-07T01:17:53.504Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -68,8 +68,17 @@ class AddTwoNums {
 </code></pre>
 <h3 id="review">Review</h3>
 <blockquote>
-<p>暂无，待补上</p>
+<p><a href="https://www.infoq.com/articles/java-10-var-type/?useSponsorshipSuggestions=true">Explore the New Java 10 “var” Type: An Introduction and Hands-on Tutorial</a></p>
 </blockquote>
+<p>在Java 10以及之后，在声明局部变量类型的时候可以使用var来告知编译器进行类型推断，取代之前的类名或接口名。在变量初始化的阶段，就像 var s = “”;
+此外，for循环中的索引变量类型也可以使用var。它由编译器推断类型，然后将推断出的类型写入字节码中，也就是说它对运行时并没有任何影响，仅仅是一个语法糖，Java仍然是一种静态语言。
+除了局部变量之外，另外在属性和方法返回值类型中，不能使用var。 这样做是为了避免引起一些无法预知的错误，使用的时候尽量使需要推断的变量靠近它声明的地方，从而缓解可读性问题。
+同时，还介绍了下JShell，从Java9之后，java开始引入了类似于python的交互式 REPL（Read-Eval-Print Loop，读取-求值-输出 循环）工具。windows，linux，macos直接在终端内，输入jshell即可。</p>
+<h2 id="尽管引入var变量会使代码可读性变得更糟但此次的新特性为开发者提供了一种在编写复杂表达式的时候寻求了一个新的契机">尽管引入var变量会使代码可读性变得更糟，但此次的新特性为开发者提供了一种在编写复杂表达式的时候寻求了一个新的契机。</h2>
+<p>作者：Lovnx
+来源：CSDN
+原文：https://blog.csdn.net/rickiyeat/article/details/79101931
+版权声明：本文为博主原创文章，转载请附上博文链接！</p>
 <h3 id="tip">Tip</h3>
 <h4 id="python中参数传递时是按值传递呢还是按引用传递">Python中参数传递时，是按值传递呢，还是按引用传递？</h4>
 <p>首先先来看一段代码</p>
