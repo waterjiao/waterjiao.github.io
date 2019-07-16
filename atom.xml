@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-07-07T15:59:55.614Z</updated>
+    <updated>2019-07-16T14:22:27.669Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -10,6 +10,74 @@
     <logo>https://waterjiao.github.io/images/avatar.png</logo>
     <icon>https://waterjiao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Waterjiao</rights>
+    <entry>
+        <title type="html"><![CDATA[Fitness]]></title>
+        <id>https://waterjiao.github.io/post/fitness</id>
+        <link href="https://waterjiao.github.io/post/fitness">
+        </link>
+        <updated>2019-07-16T14:11:33.000Z</updated>
+        <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th>星期日</th>
+<th>星期一</th>
+<th>星期二</th>
+<th>星期三</th>
+<th>星期四</th>
+<th>星期五</th>
+<th>星期六</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+</tr>
+<tr>
+<td>14</td>
+<td>15</td>
+<td>16(蒸脚）</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+</tr>
+<tr>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+</tr>
+<tr>
+<td>28</td>
+<td>29</td>
+<td>30</td>
+<td>31</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ARTS-第二周]]></title>
         <id>https://waterjiao.github.io/post/arts-di-er-zhou</id>
