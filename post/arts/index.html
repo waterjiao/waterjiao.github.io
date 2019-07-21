@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ARTS-第三周 | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1563671671026">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1563701949355">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1563671671026" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1563701949355" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -78,8 +78,16 @@
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-07-14 ·
+                · 2019-07-21 ·
               </time>
+              
+                <a href="https://waterjiao.github.io/tag/tWfE2Yt2T" class="post-tag">
+                  # Study
+                </a>
+              
+                <a href="https://waterjiao.github.io/tag/TEAG1uIJY" class="post-tag">
+                  # Code
+                </a>
               
             </div>
             
@@ -116,12 +124,56 @@
 </code></pre>
 <h3 id="review">Review</h3>
 <blockquote>
-<p><a href="https://www.infoq.com/articles/java-10-var-type/?useSponsorshipSuggestions=true">Explore the New Java 10 “var” Type: An Introduction and Hands-on Tutorial</a></p>
+<p><a href="https://www.infoq.com/articles/test-driven-design-java/?useSponsorshipSuggestions=true">Test-Driven Development: Really, It’s a Design Technique</a></p>
 </blockquote>
+<p>TDD 是敏捷开发中的一项核心实践和技术，也是一种设计方法论。TDD的原理是在开发功能代码之前，先编写单元测试用例代码，测试代码确定需要编写什么产品代码。TDD 是 XP（Extreme Programming）的核心实践。它的主要推动者是 Kent Beck。</p>
+<p>TDD的用法：</p>
+<ol>
+<li>创建测试相关类，方法</li>
+<li>写一个测试用例</li>
+<li>Red State，不通过上一步所写的测试用例</li>
+<li>Green State，改动代码使其通过测试用例</li>
+<li>Refactoring state，重构，消除重复的，不用的，优化设计结构，也称为Bule State</li>
+</ol>
+<p>TDD的优势：</p>
+<ol>
+<li>更好的软件</li>
+<li>避免冗余</li>
+<li>新的特性</li>
+<li>有文档</li>
+</ol>
 <h3 id="tip">Tip</h3>
-<h4 id="python中参数传递时是按值传递呢还是按引用传递">Python中参数传递时，是按值传递呢，还是按引用传递？</h4>
+<h4 id="python中的列表">Python中的列表</h4>
+<ol>
+<li>列表适合存储相关对象的集合，有大量类似的对象，要将它们作为一个整体，用列表比较合适</li>
+<li>python中的列表与其他语言的数组相类似，不过是动态的用起来很easy</li>
+<li>在代码中，对象列表用中括号包围，列表对象用逗号分隔</li>
+<li>python中的in可以检查成员关系</li>
+<li>在运行时扩展列表，append（常用）、extend（用于动态扩展）和insert（插入）</li>
+<li>在运行时收缩列表，remove和pop，remove只能remove列表对象，pop根据列表对象所处位置来pop</li>
+<li>列表copy时的陷阱，看一下代码吧</li>
+<li>其实用列表最舒服的应该是切片，不光在列表中也可以在字符串中</li>
+</ol>
+<pre><code class="language-python">a = [1,2,3,4]
+b = a
+print(b)
+# [1,2,3,4]
+b.append(5)
+print(b)
+# [1,2,3,4,5]
+print(a)
+# [1,2,3,4,5]
+</code></pre>
+<p>我们发现在给b列表增加5时，a也增加了5，这是为什么呢？这是因为a和b都指向了同一个数据，如果修改列表，则另一个也会改变。
+如果想要仅仅只是复制，则用copy和deepcopy，区别的话，占个坑，之后再说。
+现在举一个切片的栗子，我觉得比较厉害的</p>
+<pre><code class="language-python">a = [1,2,3]
+print(a[::-1])
+# [3,2,1]
+</code></pre>
+<p>可能也不是很厉害，记住一点就是与其他语言不同的是，python允许从任意两端索引，使用-1会选择列表中的最后一项，-2会选择倒数第2个对象，以此类推。</p>
 <h3 id="share">Share</h3>
-<p>分享一篇关于注解的吧，作者将注解比作标签，可以很好得解释一下注解<a href="https://blog.csdn.net/shengzhu1/article/details/81271409">Java注解深入浅出</a></p>
+<p>分享一篇关于如何学习Java并发编程<a href="https://www.infoq.cn/article/1ggzj_oFl8wuJFwVG9et">简明高效的 Java 并发编程学习指南</a></p>
 
             </div>
           </article>
@@ -130,9 +182,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://waterjiao.github.io/post/arts-di-er-zhou">
+            <a href="https://waterjiao.github.io/post/fitness">
               <h3 class="post-title">
-                ARTS-第二周
+                Fitness
               </h3>
             </a>
           </div>
