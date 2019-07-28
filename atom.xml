@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-07-28T16:20:43.480Z</updated>
+    <updated>2019-07-28T16:21:47.199Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -291,7 +291,8 @@ Python中的变量是对象引用。可以把变量中存储的值认为是值�
 <p>《码出高效 Java开发手册》
 《Spring Boot实战》
 《Java编程逻辑》
-《Head First 设计模式》</p>
+《Head First 设计模式》
+《Java并发编程》</p>
 <h3 id="推理"><strong>推理</strong></h3>
 <p>《暗黑者四部曲》</p>
 <h3 id="文学"><strong>文学</strong></h3>
