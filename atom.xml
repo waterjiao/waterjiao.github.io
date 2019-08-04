@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-08-04T15:35:54.153Z</updated>
+    <updated>2019-08-04T15:39:12.998Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -50,15 +50,15 @@
 <!-- more -->
 <p>思路：不将整数转化为字符串，首先可以确定的是负数一定不是回文数，因为带有负数符号，接着只需要比较数字倒置后的大小是否和之前数字大小相同即可。</p>
 <pre><code>class Solution{
-    public boolean isPalindrome(int x) {
-        if(x&lt;0) return false;
-				int revse = 0;
-				int origin = x;
-				while(x!=0){
-				    revse = revse*10+x%10;
-						x = x/10;
-				}
-				return revse==origin;
+	public boolean isPalindrome(int x) {
+		if(x&lt;0) return false;
+		int revse = 0;
+		int origin = x;
+		while(x!=0){
+			revse = revse*10+x%10;
+			x = x/10;
+			}
+	return revse==origin;
 }
 </code></pre>
 <h3 id="review">Review</h3>
@@ -74,8 +74,8 @@
 </ol>
 <h3 id="tip">Tip</h3>
 <h4 id="日常小结1">日常小结1</h4>
-<p><strong>反射</strong>
-java反射机制是在运行状态中，对于任意一个类都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意方法和属性。
+<p><strong>反射</strong></p>
+<p>java反射机制是在运行状态中，对于任意一个类都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意方法和属性。
 获取class对象的三种方式：</p>
 <ol>
 <li>Object-&gt;getClass()</li>
@@ -104,8 +104,8 @@ public void add(int index, E element) {
 <pre><code>str[0] = &quot;he&quot;;
 System.out.println(list.get(0)); //输出he
 </code></pre>
-<p><strong>重载和重写</strong>
-重载：发生在同一类中，方法名必须相同，参数类型不同，个数不同，顺序不同，方法返回值和访问值可以不同，发生在编译时。
+<p><strong>重载和重写</strong></p>
+<p>重载：发生在同一类中，方法名必须相同，参数类型不同，个数不同，顺序不同，方法返回值和访问值可以不同，发生在编译时。
 重写：发生在子类父类中，方法名，参数列表必须相同，返回值范围小于父类，抛出的异常范围小于等于父类，访问修饰符范围大于等于父类，如果父类的访问修饰方法为private，则子类不能重写该方法。</p>
 <h3 id="share">Share</h3>
 <p>分享一篇关于如何学习Java IO<a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247484946&amp;idx=1&amp;sn=043b054de3aef29bf3ff80eea15c16fd&amp;source=41#wechat_redirect">Java IO，硬骨头也能变软</a></p>
