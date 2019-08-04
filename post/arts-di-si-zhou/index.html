@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ARTS-第四周 | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1564881578044">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1564887441252">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1564881578044" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1564887441252" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -78,7 +78,7 @@
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-07-30 ·
+                · 2019-08-04 ·
               </time>
               
                 <a href="https://waterjiao.github.io/tag/tWfE2Yt2T" class="post-tag">
@@ -97,88 +97,95 @@
             <div class="post-content">
               <h2 id="arts">ARTS</h2>
 <h3 id="algorithm">Algorithm</h3>
-<h4 id="无重复字符的最长子串longest-substring-without-repeating-characters">无重复字符的最长子串（<a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/">Longest Substring Without Repeating Characters</a>）</h4>
+<h4 id="回文数palindrome-number">回文数（<a href="https://leetcode.com/problems/palindrome-number">Palindrome Number</a>）</h4>
 <blockquote>
-<p>无重复字符的最长子串。题目难度为 Medium</p>
+<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。题目难度为 Easy</p>
 </blockquote>
-<p>给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。</p>
+<p><strong>示例</strong></p>
+<pre><code>输入：121
+输出：true
+
+输入：-121
+输出：false
+</code></pre>
+<p><strong>进阶</strong>
+不将整数转化为字符串</p>
 <!-- more -->
-<p>思路：字符串含有不同的字符，这些字符在ASCII表中占据128位，所以使用一个128位的数组来存储，例如hash['a']=3，代表a字符在遍历字符串时，前一次出现a字符的索引为3，preP为上次出现的最大索引，与当前索引做差就是最大的长度。</p>
+<p>思路：不将整数转化为字符串，首先可以确定的是负数一定不是回文数，因为带有负数符号，接着只需要比较数字倒置后的大小是否和之前数字大小相同即可。</p>
 <pre><code>class Solution{
-    public int lengthOfLongestSubstring(String s) {
-        int len;
-        if (s == null || (len = s.length()) == 0) return 0;
-        int preP = 0, max = 0;
-        int[] hash = new int[128];
-        for (int i = 0; i &lt; len; ++i) {
-            char c = s.charAt(i);
-            if (hash[c] &gt; preP) {
-                preP = hash[c];
-            }
-            int l = i - preP + 1;
-            hash[c] = i + 1;
-            if (l &gt; max) max = l;
-        }
-        return max;
+    public boolean isPalindrome(int x) {
+        if(x&lt;0) return false;
+				int revse = 0;
+				int origin = x;
+				while(x!=0){
+				    revse = revse*10+x%10;
+						x = x/10;
+				}
+				return revse==origin;
 }
 </code></pre>
 <h3 id="review">Review</h3>
 <blockquote>
-<p><a href="https://www.infoq.com/articles/test-driven-design-java/?useSponsorshipSuggestions=true">Test-Driven Development: Really, It’s a Design Technique</a></p>
+<p><a href="https://www.infoq.com/articles/single-file-execution-java11/">Running Single-file Programs without Compiling in Java 11</a></p>
 </blockquote>
-<p>TDD 是敏捷开发中的一项核心实践和技术，也是一种设计方法论。TDD的原理是在开发功能代码之前，先编写单元测试用例代码，测试代码确定需要编写什么产品代码。TDD 是 XP（Extreme Programming）的核心实践。它的主要推动者是 Kent Beck。</p>
-<p>TDD的用法：</p>
+<p>在java11之前，写完helloworld后，需要javac生成helloworld.class文件，再使用java helloworld来运行程序，在java11，只需要使用java helloworld.java即可。</p>
 <ol>
-<li>创建测试相关类，方法</li>
-<li>写一个测试用例</li>
-<li>Red State，不通过上一步所写的测试用例</li>
-<li>Green State，改动代码使其通过测试用例</li>
-<li>Refactoring state，重构，消除重复的，不用的，优化设计结构，也称为Bule State</li>
-</ol>
-<p>TDD的优势：</p>
-<ol>
-<li>更好的软件</li>
-<li>避免冗余</li>
-<li>新的特性</li>
-<li>有文档</li>
+<li>java11可以像脚本一样运行单文件</li>
+<li>一个文件下可以有多个公共类</li>
+<li>接1，单文件可以不需要class文件</li>
+<li>运行时，文件名和类名可以不相同</li>
 </ol>
 <h3 id="tip">Tip</h3>
-<h4 id="python中的列表">Python中的列表</h4>
+<h4 id="日常小结1">日常小结1</h4>
+<p><strong>反射</strong>
+java反射机制是在运行状态中，对于任意一个类都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意方法和属性。
+获取class对象的三种方式：</p>
 <ol>
-<li>列表适合存储相关对象的集合，有大量类似的对象，要将它们作为一个整体，用列表比较合适</li>
-<li>python中的列表与其他语言的数组相类似，不过是动态的用起来很easy</li>
-<li>在代码中，对象列表用中括号包围，列表对象用逗号分隔</li>
-<li>python中的in可以检查成员关系</li>
-<li>在运行时扩展列表，append（常用）、extend（用于动态扩展）和insert（插入）</li>
-<li>在运行时收缩列表，remove和pop，remove只能remove列表对象，pop根据列表对象所处位置来pop</li>
-<li>列表copy时的陷阱，看一下代码吧</li>
-<li>其实用列表最舒服的应该是切片，不光在列表中也可以在字符串中</li>
+<li>Object-&gt;getClass()</li>
+<li>任何数据类型都有一个静态的class属性</li>
+<li>通过class类的静态方法：forName(String className)</li>
 </ol>
-<pre><code class="language-python">a = [1,2,3,4]
-b = a
-print(b)
-# [1,2,3,4]
-b.append(5)
-print(b)
-# [1,2,3,4,5]
-print(a)
-# [1,2,3,4,5]
+<p><strong>Arrays.asList()</strong>
+Arrays.asList()可以将数组转化为集合，但转化后底层其实还是数组，Arrays.asList()返回的是java.util.Arrays的一个内部类class java.util.Arrays$ArrayList</p>
+<pre><code>String[] str = new String[]{&quot;you&quot;,&quot;me&quot;);
+List&lt;String&gt; list = Arrays.asList(str);
 </code></pre>
-<p>我们发现在给b列表增加5时，a也增加了5，这是为什么呢？这是因为a和b都指向了同一个数据，如果修改列表，则另一个也会改变。
-如果想要仅仅只是复制，则用copy和deepcopy，区别的话，占个坑，之后再说。
-现在举一个切片的栗子，我觉得比较厉害的</p>
-<pre><code class="language-python">a = [1,2,3]
-print(a[::-1])
-# [3,2,1]
+<ol>
+<li>底层还是数组</li>
+</ol>
+<pre><code>list.add(&quot;he&quot;) //抛出异常UnsupportedOperationException()
+public void add(int index, E element) {
+        throw new UnsupportedOperationException();
+}
 </code></pre>
-<p>可能也不是很厉害，记住一点就是与其他语言不同的是，python允许从任意两端索引，使用-1会选择列表中的最后一项，-2会选择倒数第2个对象，以此类推。</p>
+<p>如果想要使其不抛出异常，则要使用</p>
+<pre><code>List&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(str));
+</code></pre>
+<ol start="2">
+<li>改变原有数组的内容，list也随着改变</li>
+</ol>
+<pre><code>str[0] = &quot;he&quot;;
+System.out.println(list.get(0)); //输出he
+</code></pre>
+<p><strong>重载和重写</strong>
+重载：发生在同一类中，方法名必须相同，参数类型不同，个数不同，顺序不同，方法返回值和访问值可以不同，发生在编译时。
+重写：发生在子类父类中，方法名，参数列表必须相同，返回值范围小于父类，抛出的异常范围小于等于父类，访问修饰符范围大于等于父类，如果父类的访问修饰方法为private，则子类不能重写该方法。</p>
 <h3 id="share">Share</h3>
-<p>分享一篇关于如何学习Java并发编程<a href="https://www.infoq.cn/article/1ggzj_oFl8wuJFwVG9et">简明高效的 Java 并发编程学习指南</a></p>
+<p>分享一篇关于如何学习Java IO<a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247484946&amp;idx=1&amp;sn=043b054de3aef29bf3ff80eea15c16fd&amp;source=41#wechat_redirect">Java IO，硬骨头也能变软</a></p>
 
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://waterjiao.github.io/post/arts">
+              <h3 class="post-title">
+                ARTS-第三周
+              </h3>
+            </a>
+          </div>
         
 
         

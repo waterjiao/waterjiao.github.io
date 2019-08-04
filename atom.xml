@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-08-04T01:19:40.630Z</updated>
+    <updated>2019-08-04T02:57:24.528Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -10,6 +10,107 @@
     <logo>https://waterjiao.github.io/images/avatar.png</logo>
     <icon>https://waterjiao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Waterjiao</rights>
+    <entry>
+        <title type="html"><![CDATA[ARTS-第四周]]></title>
+        <id>https://waterjiao.github.io/post/arts-di-si-zhou</id>
+        <link href="https://waterjiao.github.io/post/arts-di-si-zhou">
+        </link>
+        <updated>2019-08-04T02:47:22.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<h4 id="回文数palindrome-number">回文数（<a href="https://leetcode.com/problems/palindrome-number">Palindrome Number</a>）</h4>
+<blockquote>
+<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。题目难度为 Easy</p>
+</blockquote>
+<p><strong>示例</strong></p>
+<pre><code>输入：121
+输出：true
+
+输入：-121
+输出：false
+</code></pre>
+<p><strong>进阶</strong>
+不将整数转化为字符串</p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<h4 id="回文数palindrome-number">回文数（<a href="https://leetcode.com/problems/palindrome-number">Palindrome Number</a>）</h4>
+<blockquote>
+<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。题目难度为 Easy</p>
+</blockquote>
+<p><strong>示例</strong></p>
+<pre><code>输入：121
+输出：true
+
+输入：-121
+输出：false
+</code></pre>
+<p><strong>进阶</strong>
+不将整数转化为字符串</p>
+<!-- more -->
+<p>思路：不将整数转化为字符串，首先可以确定的是负数一定不是回文数，因为带有负数符号，接着只需要比较数字倒置后的大小是否和之前数字大小相同即可。</p>
+<pre><code>class Solution{
+    public boolean isPalindrome(int x) {
+        if(x&lt;0) return false;
+				int revse = 0;
+				int origin = x;
+				while(x!=0){
+				    revse = revse*10+x%10;
+						x = x/10;
+				}
+				return revse==origin;
+}
+</code></pre>
+<h3 id="review">Review</h3>
+<blockquote>
+<p><a href="https://www.infoq.com/articles/single-file-execution-java11/">Running Single-file Programs without Compiling in Java 11</a></p>
+</blockquote>
+<p>在java11之前，写完helloworld后，需要javac生成helloworld.class文件，再使用java helloworld来运行程序，在java11，只需要使用java helloworld.java即可。</p>
+<ol>
+<li>java11可以像脚本一样运行单文件</li>
+<li>一个文件下可以有多个公共类</li>
+<li>接1，单文件可以不需要class文件</li>
+<li>运行时，文件名和类名可以不相同</li>
+</ol>
+<h3 id="tip">Tip</h3>
+<h4 id="日常小结1">日常小结1</h4>
+<p><strong>反射</strong>
+java反射机制是在运行状态中，对于任意一个类都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意方法和属性。
+获取class对象的三种方式：</p>
+<ol>
+<li>Object-&gt;getClass()</li>
+<li>任何数据类型都有一个静态的class属性</li>
+<li>通过class类的静态方法：forName(String className)</li>
+</ol>
+<p><strong>Arrays.asList()</strong>
+Arrays.asList()可以将数组转化为集合，但转化后底层其实还是数组，Arrays.asList()返回的是java.util.Arrays的一个内部类class java.util.Arrays$ArrayList</p>
+<pre><code>String[] str = new String[]{&quot;you&quot;,&quot;me&quot;);
+List&lt;String&gt; list = Arrays.asList(str);
+</code></pre>
+<ol>
+<li>底层还是数组</li>
+</ol>
+<pre><code>list.add(&quot;he&quot;) //抛出异常UnsupportedOperationException()
+public void add(int index, E element) {
+        throw new UnsupportedOperationException();
+}
+</code></pre>
+<p>如果想要使其不抛出异常，则要使用</p>
+<pre><code>List&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(str));
+</code></pre>
+<ol start="2">
+<li>改变原有数组的内容，list也随着改变</li>
+</ol>
+<pre><code>str[0] = &quot;he&quot;;
+System.out.println(list.get(0)); //输出he
+</code></pre>
+<p><strong>重载和重写</strong>
+重载：发生在同一类中，方法名必须相同，参数类型不同，个数不同，顺序不同，方法返回值和访问值可以不同，发生在编译时。
+重写：发生在子类父类中，方法名，参数列表必须相同，返回值范围小于父类，抛出的异常范围小于等于父类，访问修饰符范围大于等于父类，如果父类的访问修饰方法为private，则子类不能重写该方法。</p>
+<h3 id="share">Share</h3>
+<p>分享一篇关于如何学习Java IO<a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247484946&amp;idx=1&amp;sn=043b054de3aef29bf3ff80eea15c16fd&amp;source=41#wechat_redirect">Java IO，硬骨头也能变软</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ARTS-第三周]]></title>
         <id>https://waterjiao.github.io/post/arts</id>
