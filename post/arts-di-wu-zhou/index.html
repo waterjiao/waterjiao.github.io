@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ARTS-第五周 | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1565014374154">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1565017778740">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1565014374154" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1565017778740" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -136,40 +136,60 @@
 <li>运行时，文件名和类名可以不相同</li>
 </ol>
 <h3 id="tip">Tip</h3>
-<h4 id="日常小结1">日常小结1</h4>
-<p><strong>反射</strong></p>
-<p>java反射机制是在运行状态中，对于任意一个类都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意方法和属性。
-获取class对象的三种方式：</p>
+<h4 id="日常小结2">日常小结2</h4>
+<p><strong>线程</strong></p>
 <ol>
-<li>Object-&gt;getClass()</li>
-<li>任何数据类型都有一个静态的class属性</li>
-<li>通过class类的静态方法：forName(String className)</li>
+<li>线程的五种状态：新建、就绪、运行、阻塞（等待资源）和终止</li>
+<li>sleep()方法，抛出InterruptedException
+public static native void sleep(long millis) throws InterruptedException</li>
+<li>yeild()方法，让出cpu时间
+public static native void yeild()
+native关键字说明其修饰方法是一个原生态方法，方法实现不是当前文件，而是在其他语言（如C和    C++）实现的文件中</li>
+<li>join方法，让调用join的线程等待该线程结束
+public final void join() throws InterruptedException</li>
+<li>当线程不安全时（对同一对象进行操作时，没有加锁），可以使用synchronized关键字，使用显示锁，使用原子变量，使其变得安全</li>
+<li>内存可见性：一个线程对内存的修改，另一个线程看不到，一是修改没有及时同步到内存，二是另一个线程根本就没有从内存中读。使用voilate关键字，或者使用synchronized关键字、显式锁同步。</li>
+<li>synchronized，修饰类的实例方法、静态方法和代码块
+synchronized实例方法实际保护的是同一个对象的方法调用，一般在保护变量时，需要在所有访问该变量的方法上加上synchronized</li>
+<li>原子变量
+AtomicInteger，原子变量，包含一些以原子方式实现组合操作的方法</li>
 </ol>
-<p><strong>Arrays.asList()</strong>
-Arrays.asList()可以将数组转化为集合，但转化后底层其实还是数组，Arrays.asList()返回的是java.util.Arrays的一个内部类class java.util.Arrays$ArrayList</p>
-<pre><code>String[] str = new String[]{&quot;you&quot;,&quot;me&quot;);
-List&lt;String&gt; list = Arrays.asList(str);
+<pre><code>		public class AtomicIntegerDemo{
+	      private static AtomicInteger counter = new AtomicInteger(0);
+				static class Visitor extends Thread{
+				    @Override
+						public void run(){
+						    for(int i=0;i&lt;1000;i++){
+								    counter.incrementAndGet();
+								}
+						}
+				}
+		}
+		
 </code></pre>
+<p><strong>线程池</strong></p>
+<p>什么是线程池，如何使用，为什么要用？</p>
 <ol>
-<li>底层还是数组</li>
+<li>减少创建和销毁线程的开销</li>
+<li>根据情况调节线程池中的线程的数量</li>
 </ol>
-<pre><code>list.add(&quot;he&quot;) //抛出异常UnsupportedOperationException()
-public void add(int index, E element) {
-        throw new UnsupportedOperationException();
-}
-</code></pre>
-<p>如果想要使其不抛出异常，则要使用</p>
-<pre><code>List&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(str));
-</code></pre>
-<ol start="2">
-<li>改变原有数组的内容，list也随着改变</li>
+<p>Executor接口来执行线程池的任务
+ExecutorService接口来管理和控制任务
+newFixedThreadPool(int)在池中创建线程
+newCachedThreadPool()会创建新的线程，当池中所有线程都处于运行状态，60s销毁
+线程池的四个组成部分：</p>
+<ol>
+<li>线程池管理</li>
+<li>工作线程</li>
+<li>任务接口</li>
+<li>任务队列</li>
 </ol>
-<pre><code>str[0] = &quot;he&quot;;
-System.out.println(list.get(0)); //输出he
-</code></pre>
-<p><strong>重载和重写</strong></p>
-<p>重载：发生在同一类中，方法名必须相同，参数类型不同，个数不同，顺序不同，方法返回值和访问值可以不同，发生在编译时。
-重写：发生在子类父类中，方法名，参数列表必须相同，返回值范围小于父类，抛出的异常范围小于等于父类，访问修饰符范围大于等于父类，如果父类的访问修饰方法为private，则子类不能重写该方法。</p>
+<ul>
+<li>newSingleThreadExecutor 唯一线程，出错新建</li>
+<li>newFixedThreadPool(int) 创建固定数量的线程池</li>
+<li>newCachedThreadPool 创建缓存线程池，60s销毁</li>
+<li>newScheduledThreadPool 创建一个大小无限的线程池</li>
+</ul>
 <h3 id="share">Share</h3>
 <p>分享一篇关于如何学习Java IO<a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247484946&amp;idx=1&amp;sn=043b054de3aef29bf3ff80eea15c16fd&amp;source=41#wechat_redirect">Java IO，硬骨头也能变软</a></p>
 
