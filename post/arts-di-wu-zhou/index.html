@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ARTS-第五周 | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1565710692994">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1565875999348">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1565710692994" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1565875999348" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -97,44 +97,47 @@
             <div class="post-content">
               <h2 id="arts">ARTS</h2>
 <h3 id="algorithm">Algorithm</h3>
-<h4 id="回文数palindrome-number">回文数（<a href="https://leetcode.com/problems/palindrome-number">Palindrome Number</a>）</h4>
+<h4 id="罗马数字转整数roman-to-integer">罗马数字转整数（<a href="https://leetcode-cn.com/problems/integer-to-roman/">Roman to Integer</a>）</h4>
 <blockquote>
-<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。题目难度为 Easy</p>
+<p>给定一个整数，将其转为罗马数字。输入确保在 1 到 3999 的范围内。题目难度为 Easy</p>
 </blockquote>
 <p><strong>示例</strong></p>
-<pre><code>输入：121
-输出：true
+<pre><code>输入: &quot;III&quot;
+输出: 3
 
-输入：-121
-输出：false
+输入: &quot;MCMXCIV&quot;
+输出:1994
+解释: M = 1000, CM = 900, XC = 90, IV = 4.
 </code></pre>
-<p><strong>进阶</strong>
-不将整数转化为字符串</p>
 <!-- more -->
-<p>思路：不将整数转化为字符串，首先可以确定的是负数一定不是回文数，因为带有负数符号，接着只需要比较数字倒置后的大小是否和之前数字大小相同即可。</p>
-<pre><code>class Solution{
-	public boolean isPalindrome(int x) {
-		if(x&lt;0) return false;
-		int revse = 0;
-		int origin = x;
-		while(x!=0){
-			revse = revse*10+x%10;
-			x = x/10;
-			}
-	return revse==origin;
+<p>思路：利用 map 来完成罗马数字的 7 个数字符号：I、V、X、L、C、D、M 和整数的映射关系，对应1，5，10，50，100，500，1000，如果小的数字在大的数字的左边，表示的数为大的数字减去小的数字</p>
+<pre><code>class Solution {
+    public int romanToInt(String s) {
+        Map&lt;Character,Integer&gt; map = new HashMap&lt;&gt;();
+				map.put('I',1);
+				map.put('V',5);
+				map.put('X',10);
+				map.put('L',50);
+				map.put('C',100);
+				map.put('D',500);
+				map.put('M',1000);
+				int length = s.length();
+				int sum = map.get(s.charAt(length-1));
+			  for( int i= length-2;i&gt;0;i--){
+				    if (map.get(s.charAt(i)) &lt; map.get(s.charAt(i + 1))) {
+                sum -= map.get(s.charAt(i));
+            } else {
+                sum += map.get(s.charAt(i));
+            }
+        }
+        return sum;
+    }
 }
 </code></pre>
 <h3 id="review">Review</h3>
 <blockquote>
-<p><a href="https://www.infoq.com/articles/single-file-execution-java11/">Running Single-file Programs without Compiling in Java 11</a></p>
+<p>暂无，待补充</p>
 </blockquote>
-<p>在java11之前，写完helloworld后，需要javac生成helloworld.class文件，再使用java helloworld来运行程序，在java11，只需要使用java helloworld.java即可。</p>
-<ol>
-<li>java11可以像脚本一样运行单文件</li>
-<li>一个文件下可以有多个公共类</li>
-<li>接1，单文件可以不需要class文件</li>
-<li>运行时，文件名和类名可以不相同</li>
-</ol>
 <h3 id="tip">Tip</h3>
 <h4 id="日常小结2">日常小结2</h4>
 <p><strong>线程</strong></p>
@@ -191,12 +194,21 @@ newCachedThreadPool()会创建新的线程，当池中所有线程都处于运�
 <li>newScheduledThreadPool 创建一个大小无限的线程池</li>
 </ul>
 <h3 id="share">Share</h3>
-<p>分享一篇关于如何学习Java IO<a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247484946&amp;idx=1&amp;sn=043b054de3aef29bf3ff80eea15c16fd&amp;source=41#wechat_redirect">Java IO，硬骨头也能变软</a></p>
+<p>分享一篇美团技术团队的[Java NIO浅析](https://zhuanlan.zhihu.com/p/23488863</p>
 
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://waterjiao.github.io/post/arts-di-si-zhou">
+              <h3 class="post-title">
+                ARTS-第四周
+              </h3>
+            </a>
+          </div>
         
 
         
