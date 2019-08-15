@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-08-15T13:33:22.919Z</updated>
+    <updated>2019-08-15T13:34:36.850Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -10,6 +10,21 @@
     <logo>https://waterjiao.github.io/images/avatar.png</logo>
     <icon>https://waterjiao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Waterjiao</rights>
+    <entry>
+        <title type="html"><![CDATA[macOS效率手册-持续更新]]></title>
+        <id>https://waterjiao.github.io/post/macos-xiao-lu-shou-ce-chi-xu-geng-xin</id>
+        <link href="https://waterjiao.github.io/post/macos-xiao-lu-shou-ce-chi-xu-geng-xin">
+        </link>
+        <updated>2019-08-05T14:13:17.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="macos基础配置">macOS基础配置</h2>
+<ol>
+<li>锁定拖拽
+在系统偏好设置-辅助功能-鼠标与触控板-启用拖拽-锁定拖拽
+双击想要拖动的内容，在第二次单击时不释放，就可以拖拽文件啦</li>
+<li></li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ARTS-第五周]]></title>
         <id>https://waterjiao.github.io/post/arts-di-wu-zhou</id>
