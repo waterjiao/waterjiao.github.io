@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ARTS-第五周 | Waterjiao</title>
+<title>ARTS-第六周 | Waterjiao</title>
 <link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1566098725851">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -74,25 +74,14 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              ARTS-第五周
+              ARTS-第六周
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-08-05 ·
+                · 2019-08-15 ·
               </time>
               
-                <a href="https://waterjiao.github.io/tag/tWfE2Yt2T" class="post-tag">
-                  # Study
-                </a>
-              
-                <a href="https://waterjiao.github.io/tag/TEAG1uIJY" class="post-tag">
-                  # Code
-                </a>
-              
             </div>
-            
-              <div class="post-feature-image" style="background-image: url('https://waterjiao.github.io/post-images/arts-di-wu-zhou.png')">
-              </div>
             
             <div class="post-content">
               <h2 id="arts">ARTS</h2>
@@ -139,9 +128,20 @@
 <p>暂无，待补充</p>
 </blockquote>
 <h3 id="tip">Tip</h3>
-<h4 id="日常小结2">日常小结2</h4>
+<h4 id="日常小结3">日常小结3</h4>
 <p><strong>线程</strong></p>
 <ol>
+<li>wait和notify</li>
+</ol>
+<pre><code>public final void wait() throws InterruptedException
+public final void wait(long timeout) throws InterruptedException
+
+public final native void notify()
+public final native void notifyAll()
+</code></pre>
+<p>每个对象都有一个等待队列：条件队列。当调用notify()和notifyAll()时，从条件队列中移除，并唤醒</p>
+<ol start="6">
+<li></li>
 <li>线程的五种状态：新建、就绪、运行、阻塞（等待资源）和终止</li>
 <li>sleep()方法，抛出InterruptedException
 public static native void sleep(long millis) throws InterruptedException</li>
@@ -200,15 +200,6 @@ newCachedThreadPool()会创建新的线程，当池中所有线程都处于运�
           </article>
         </div>
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://waterjiao.github.io/post/arts-di-si-zhou">
-              <h3 class="post-title">
-                ARTS-第四周
-              </h3>
-            </a>
-          </div>
         
 
         
