@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-08-23T15:57:22.842Z</updated>
+    <updated>2019-08-26T14:09:45.391Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -400,10 +400,10 @@ print(a[::-1])
 <td>21(俯卧撑)</td>
 <td>22(无训练)</td>
 <td>23(无训练)</td>
-<td>24</td>
+<td>24(无训练)</td>
 </tr>
 <tr>
-<td>26</td>
+<td>26(无训练)</td>
 <td>27</td>
 <td>28</td>
 <td>29</td>
