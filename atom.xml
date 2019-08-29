@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-08-27T14:04:00.949Z</updated>
+    <updated>2019-08-29T15:54:22.329Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -18,9 +18,9 @@
         <updated>2019-08-27T14:01:16.000Z</updated>
         <content type="html"><![CDATA[<h3 id="8月">8月</h3>
 <ol>
-<li>切尔诺贝利（正在看）</li>
+<li>切尔诺贝利-禁区（正在看）</li>
 <li>寄生虫</li>
-<li></li>
+<li>哈利波特与魔法石</li>
 </ol>
 ]]></content>
     </entry>
@@ -419,11 +419,11 @@ print(a[::-1])
 <tr>
 <td>26(无训练)</td>
 <td>27(无训练)</td>
-<td>28</td>
-<td>29</td>
-<td>30</td>
-<td>31</td>
+<td>28(俯卧撑)</td>
 <td></td>
+<td>29(俯卧撑)</td>
+<td></td>
+<td>30</td>
 </tr>
 </tbody>
 </table>
