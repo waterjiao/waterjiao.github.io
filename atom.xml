@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-09-02T15:15:08.449Z</updated>
+    <updated>2019-09-04T14:34:44.115Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -22,7 +22,7 @@
 </blockquote>
 <ol>
 <li>
-<p>切尔诺贝利-禁区（正在看）
+<p>切尔诺贝利-禁区
 影评：看着名字以为是个纪录片，没想到是个科幻片，毛子的胆子可不是一般的大，还在看，看后再补充。</p>
 </li>
 <li>
@@ -407,8 +407,8 @@ print(a[::-1])
 </tr>
 <tr>
 <td>2(无训练)</td>
-<td></td>
-<td></td>
+<td>3(无训练)</td>
+<td>4(无训练)</td>
 <td></td>
 <td></td>
 <td></td>
