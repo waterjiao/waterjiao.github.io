@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-09-13T08:37:26.038Z</updated>
+    <updated>2019-09-15T15:28:26.270Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -527,6 +527,15 @@ print(a[::-1])
 <td>14(无训练)</td>
 <td>15(无训练)</td>
 </tr>
+<tr>
+<td>16(无训练)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <blockquote>
@@ -665,6 +674,7 @@ print(a[::-1])
         <updated>2019-07-03T12:09:57.000Z</updated>
         <content type="html"><![CDATA[<ol>
 <li>synchronized可以用于修饰类的实例方法、静态方法和代码块</li>
+<li>voliate的作用在于内存可见</li>
 </ol>
 ]]></content>
     </entry>
