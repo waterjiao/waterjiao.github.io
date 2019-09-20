@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ARTS-第七周 | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1568992802336">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1569023482360">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1568992802336" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1569023482360" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -97,33 +97,70 @@
             <div class="post-content">
               <h2 id="arts">ARTS</h2>
 <h3 id="algorithm">Algorithm</h3>
-<h4 id="最长公共前缀longest-common-prefix">最长公共前缀（<a href="https://leetcode-cn.com/problems/longest-common-prefix/?utm_source=LCUS&amp;utm_medium=ip_redirect_q_uns&amp;utm_campaign=transfer2china">Longest Common Prefix</a>）</h4>
+<h4 id="有效的括号valid-parentheses">有效的括号（<a href="https://leetcode-cn.com/problems/valid-parentheses/?utm_source=LCUS&amp;utm_medium=ip_redirect_q_uns&amp;utm_campaign=transfer2china">Valid Parentheses</a>）</h4>
 <blockquote>
-<p>编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 &quot;&quot;。题目难度为 Easy</p>
+<p>给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。题目难度为 Easy</p>
 </blockquote>
+<p>有效字符串需满足：</p>
+<ul>
+<li>左括号必须用相同类型的右括号闭合。</li>
+<li>左括号必须以正确的顺序闭合。</li>
+<li>注意空字符串可被认为是有效字符串。</li>
+</ul>
 <p><strong>示例</strong></p>
-<pre><code>输入: [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]
-输出: &quot;fl&quot;
+<pre><code>输入: &quot;()&quot;
+输出: true
 
-输入: [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]
-输出: &quot;&quot;
-解释: 输入不存在公共前缀。
+输入: &quot;([)]&quot;
+输出: false
 </code></pre>
-<p><strong>说明:</strong>
-所有输入只包含小写字母 a-z 。</p>
 <!-- more -->
-<p>思路：找出最短的那个字符串的长度 minLen，然后在 0...minLen 的范围比较所有字符串，如果比较到有不同的字符，那么直接返回当前索引长度的字符串即可，否则最后返回最短的字符串即可。</p>
+<p>思路：当出现左括号的时候入栈，当遇到右括号时，判断栈顶的左括号是否何其匹配，不匹配的话直接返回 false 即可，最终判断是否空栈即可</p>
 <pre><code>class Solution {
-    public String longestCommonPrefix(String[] strs) {
-        int len = strs.length;
-        if (len == 0) return &quot;&quot;;
-        int minLen = 0x7fffffff;
-        for (String str : strs) minLen = Math.min(minLen, str.length());
-        for (int j = 0; j &lt; minLen; ++j)
-            for (int i = 1; i &lt; len; ++i)
-                if (strs[0].charAt(j) != strs[i].charAt(j))
-                    return strs[0].substring(0, j);
-        return strs[0].substring(0, minLen);
+    public boolean isValid(String s) {
+        char[] stack = new char[s.length() + 1];
+        int top = 1;
+        for (char c : s.toCharArray()) {
+            if (c == '(' || c == '[' || c == '{') {
+                stack[top++] = c; 
+            } else if (c == ')' &amp;&amp; stack[--top] != '(') {
+                return false;
+            } else if (c == ']' &amp;&amp; stack[--top] != '[') {
+                return false;
+            } else if (c == '}' &amp;&amp; stack[--top] != '{') {
+                return false;
+            }
+        }
+        return top == 1;
+    }
+}
+</code></pre>
+<pre><code>class Solution {
+    public boolean isValid(String s) {
+        if(s==null||s.length()==0) return true;
+        List&lt;String&gt; list = new ArrayList&lt;&gt;();
+        Map&lt;Char,Char&gt; map = new HashMap&lt;&gt;();
+        map.add(')':'(');
+        map.add(']':'[');
+        map.add('}':'{');
+        boolean rightFirst = s.charAt(0).equals(')')||s.charAt(0).equals('}')||s.charAt(0).equals(']');
+        if(rightFirst) return false;
+        for(int i=0;i&lt;s.length();i++){
+            boolean leftFlag = s.charAt(i).equals('(')||s.charAt(i).equals('{')||s.charAt(i).equals('[');
+            boolean rightFlag = s.charAt(i).equals(')')||s.charAt(i).equals('}')||s.charAt(i).equals(']');
+            if(leftFlag){
+                list.add(s.charAt(i))
+            }else{
+                if(map(s.charAt(i)).equals(list(list.size()-1))){
+                    list.del(list.size()-1);
+                }else{
+                    return false;
+                }
+            }
+        }
+        if(list.size()==0){
+            return true;
+        }
     }
 }
 </code></pre>
@@ -153,12 +190,21 @@ HashTable是线程安全的，由于使用了sychronized，不建议使用，建
 链接：是指将创建成的类合并至Java虚拟机中，使之能够执行的过程。它可分为验证、准备和解析三个阶段。</li>
 </ol>
 <h3 id="share">Share</h3>
-<p>分享一篇关于事物隔离级别的文章<a href="https://github.com/waterjiao/JavaGuide/blob/master/docs/database/%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB(%E5%9B%BE%E6%96%87%E8%AF%A6%E8%A7%A3).md">事务隔离级别(图文详解)</a></p>
+<p>分享一篇关于JVM GC有关的文章<a href="https://my.oschina.net/hosee/blog/644618">JVM GC参数以及GC算法的应用</a></p>
 
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://waterjiao.github.io/post/ying-dan">
+              <h3 class="post-title">
+                影单
+              </h3>
+            </a>
+          </div>
         
 
         

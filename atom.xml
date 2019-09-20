@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-09-20T15:20:04.565Z</updated>
+    <updated>2019-09-20T23:51:25.607Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -10,6 +10,130 @@
     <logo>https://waterjiao.github.io/images/avatar.png</logo>
     <icon>https://waterjiao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Waterjiao</rights>
+    <entry>
+        <title type="html"><![CDATA[ARTS-第七周]]></title>
+        <id>https://waterjiao.github.io/post/arts-di-qi-zhou</id>
+        <link href="https://waterjiao.github.io/post/arts-di-qi-zhou">
+        </link>
+        <updated>2019-09-08T14:52:51.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<h4 id="有效的括号valid-parentheses">有效的括号（<a href="https://leetcode-cn.com/problems/valid-parentheses/?utm_source=LCUS&amp;utm_medium=ip_redirect_q_uns&amp;utm_campaign=transfer2china">Valid Parentheses</a>）</h4>
+<blockquote>
+<p>给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。题目难度为 Easy</p>
+</blockquote>
+<p>有效字符串需满足：</p>
+<ul>
+<li>左括号必须用相同类型的右括号闭合。</li>
+<li>左括号必须以正确的顺序闭合。</li>
+<li>注意空字符串可被认为是有效字符串。</li>
+</ul>
+<p><strong>示例</strong></p>
+<pre><code>输入: &quot;()&quot;
+输出: true
+
+输入: &quot;([)]&quot;
+输出: false
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<h4 id="有效的括号valid-parentheses">有效的括号（<a href="https://leetcode-cn.com/problems/valid-parentheses/?utm_source=LCUS&amp;utm_medium=ip_redirect_q_uns&amp;utm_campaign=transfer2china">Valid Parentheses</a>）</h4>
+<blockquote>
+<p>给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。题目难度为 Easy</p>
+</blockquote>
+<p>有效字符串需满足：</p>
+<ul>
+<li>左括号必须用相同类型的右括号闭合。</li>
+<li>左括号必须以正确的顺序闭合。</li>
+<li>注意空字符串可被认为是有效字符串。</li>
+</ul>
+<p><strong>示例</strong></p>
+<pre><code>输入: &quot;()&quot;
+输出: true
+
+输入: &quot;([)]&quot;
+输出: false
+</code></pre>
+<!-- more -->
+<p>思路：当出现左括号的时候入栈，当遇到右括号时，判断栈顶的左括号是否何其匹配，不匹配的话直接返回 false 即可，最终判断是否空栈即可</p>
+<pre><code>class Solution {
+    public boolean isValid(String s) {
+        char[] stack = new char[s.length() + 1];
+        int top = 1;
+        for (char c : s.toCharArray()) {
+            if (c == '(' || c == '[' || c == '{') {
+                stack[top++] = c; 
+            } else if (c == ')' &amp;&amp; stack[--top] != '(') {
+                return false;
+            } else if (c == ']' &amp;&amp; stack[--top] != '[') {
+                return false;
+            } else if (c == '}' &amp;&amp; stack[--top] != '{') {
+                return false;
+            }
+        }
+        return top == 1;
+    }
+}
+</code></pre>
+<pre><code>class Solution {
+    public boolean isValid(String s) {
+        if(s==null||s.length()==0) return true;
+        List&lt;String&gt; list = new ArrayList&lt;&gt;();
+        Map&lt;Char,Char&gt; map = new HashMap&lt;&gt;();
+        map.add(')':'(');
+        map.add(']':'[');
+        map.add('}':'{');
+        boolean rightFirst = s.charAt(0).equals(')')||s.charAt(0).equals('}')||s.charAt(0).equals(']');
+        if(rightFirst) return false;
+        for(int i=0;i&lt;s.length();i++){
+            boolean leftFlag = s.charAt(i).equals('(')||s.charAt(i).equals('{')||s.charAt(i).equals('[');
+            boolean rightFlag = s.charAt(i).equals(')')||s.charAt(i).equals('}')||s.charAt(i).equals(']');
+            if(leftFlag){
+                list.add(s.charAt(i))
+            }else{
+                if(map(s.charAt(i)).equals(list(list.size()-1))){
+                    list.del(list.size()-1);
+                }else{
+                    return false;
+                }
+            }
+        }
+        if(list.size()==0){
+            return true;
+        }
+    }
+}
+</code></pre>
+<h3 id="review">Review</h3>
+<blockquote>
+<p>暂无，待补充</p>
+</blockquote>
+<h3 id="tip">Tip</h3>
+<h4 id="日常小结4">日常小结4</h4>
+<p><strong>容器</strong></p>
+<ol>
+<li>List，Set，Map
+List存放数据有序，不唯一
+Set存放数据无序，唯一
+Map存放键值对</li>
+<li>HashMap和HashTable
+HashMap不是线程安全的，底层是通过数组+链表/红黑树的方式实现（jdk1.7和jdk1.8）
+HashTable是线程安全的，由于使用了sychronized，不建议使用，建议使用ConcurrentHashMap</li>
+<li>HashSet底层是HashMap</li>
+</ol>
+<p><strong>JVM</strong></p>
+<ol>
+<li>JRE和JDK，JRE是指Java运行环境，包括Java虚拟机和Java基础类库，JDK包括JRE以及javac编译工具等</li>
+<li>Java虚拟机加载Java类一般需要三个步骤，加载-链接-初始化
+加载：就是查找字节流，并且据此创建类的过程，通过类加载器。启动类加载器（bootstrap class loader），负责加载JRE的lib目录下jar包中的类，扩展类加载器是启动类加载器的孩子，负责加载lib/ext目录下jar包中的类，应用类加载器的父类是扩展类加载器，负责加载应用程序路径下的类。
+注意：双亲委派模型。类加载器还提供了命名空间。
+链接：是指将创建成的类合并至Java虚拟机中，使之能够执行的过程。它可分为验证、准备和解析三个阶段。</li>
+</ol>
+<h3 id="share">Share</h3>
+<p>分享一篇关于JVM GC有关的文章<a href="https://my.oschina.net/hosee/blog/644618">JVM GC参数以及GC算法的应用</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[影单]]></title>
         <id>https://waterjiao.github.io/post/ying-dan</id>
@@ -782,28 +906,6 @@ Python中的变量是对象引用。可以把变量中存储的值认为是值�
 解释器会查看对象引用指示的值的类型，如果变量是可变的（列表、字典和集合），就会应用按引用调用；如果变量是不可变的（字符串、整数和元组），就会按值传入函数。</p>
 <h3 id="share">Share</h3>
 <p>分享一篇关于注解的吧，作者将注解比作标签，可以很好得解释一下注解<a href="https://blog.csdn.net/shengzhu1/article/details/81271409">Java注解深入浅出</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[书单]]></title>
-        <id>https://waterjiao.github.io/post/shu-dan</id>
-        <link href="https://waterjiao.github.io/post/shu-dan">
-        </link>
-        <updated>2019-06-30T15:45:03.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>不知不觉就七月了，记录下看得书，争取每读完一本，输出一篇心得体会</p>
-</blockquote>
-<h3 id="技术"><strong>技术</strong></h3>
-<p>《码出高效 Java开发手册》
-《Spring Boot实战》
-《Java编程逻辑》
-《Head First 设计模式》
-《Java并发编程》
-《码农翻身》（9.10）</p>
-<h3 id="推理"><strong>推理</strong></h3>
-<p>《暗黑者四部曲》</p>
-<h3 id="文学"><strong>文学</strong></h3>
-<p>《荣宝斋》</p>
 ]]></content>
     </entry>
 </feed>
