@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-09-23T14:21:29.093Z</updated>
+    <updated>2019-09-28T13:54:40.839Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -280,7 +280,7 @@ volatile和synchronized的区别，voilate关键字是用于内存可见，由�
 在系统偏好设置-辅助功能-鼠标与触控板-启用拖拽-锁定拖拽
 双击想要拖动的内容，在第二次单击时不释放，就可以拖拽文件啦</li>
 <li>侧边放置dock，将功能键F1等设置为标准功能键，特殊功能需要Fn键配合使用</li>
-<li></li>
+<li>壮壮，希望你个小毛孩一切安好</li>
 </ol>
 ]]></content>
     </entry>
@@ -664,11 +664,11 @@ print(a[::-1])
 <tr>
 <td>23(生病)</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>24(无训练)</td>
+<td>25(无训练)</td>
+<td>26(无训练)</td>
+<td>27(无训练)</td>
+<td>28(无训练)</td>
 </tr>
 </tbody>
 </table>
