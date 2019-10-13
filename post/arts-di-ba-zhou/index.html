@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ARTS-第八周 | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1570546578563">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1570932080875">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1570546578563" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1570932080875" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -81,75 +81,45 @@
                 · 2019-09-23 ·
               </time>
               
+                <a href="https://waterjiao.github.io/tag/tWfE2Yt2T" class="post-tag">
+                  # Study
+                </a>
+              
+                <a href="https://waterjiao.github.io/tag/TEAG1uIJY" class="post-tag">
+                  # Code
+                </a>
+              
             </div>
+            
+              <div class="post-feature-image" style="background-image: url('https://waterjiao.github.io/post-images/arts-di-ba-zhou.jpg')">
+              </div>
             
             <div class="post-content">
               <h2 id="arts">ARTS</h2>
 <h3 id="algorithm">Algorithm</h3>
-<h4 id="有效的括号valid-parentheses">有效的括号（<a href="https://leetcode-cn.com/problems/valid-parentheses/?utm_source=LCUS&amp;utm_medium=ip_redirect_q_uns&amp;utm_campaign=transfer2china">Valid Parentheses</a>）</h4>
+<h4 id="x的平方根sqrtx">x的平方根（<a href="https://leetcode-cn.com/problems/sqrtx/">Sqrt(x)</a>）</h4>
 <blockquote>
-<p>给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。题目难度为 Easy</p>
+<p>实现 int sqrt(int x) 函数。题目难度为 Easy</p>
 </blockquote>
-<p>有效字符串需满足：</p>
-<ul>
-<li>左括号必须用相同类型的右括号闭合。</li>
-<li>左括号必须以正确的顺序闭合。</li>
-<li>注意空字符串可被认为是有效字符串。</li>
-</ul>
+<p>计算并返回 x 的平方根，其中 x 是非负整数。由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
 <p><strong>示例</strong></p>
-<pre><code>输入: &quot;()&quot;
-输出: true
+<pre><code>输入: 4
+输出: 2
 
-输入: &quot;([)]&quot;
-输出: false
+输入: 8
+输出: 2
+说明: 8 的平方根是 2.82842..., 
+         由于返回类型是整数，小数部分将被舍去。
 </code></pre>
 <!-- more -->
-<p>思路：当出现左括号的时候入栈，当遇到右括号时，判断栈顶的左括号是否何其匹配，不匹配的话直接返回 false 即可，最终判断是否空栈即可</p>
+<p>思路：牛顿迭代法平方根</p>
 <pre><code>class Solution {
-    public boolean isValid(String s) {
-        char[] stack = new char[s.length() + 1];
-        int top = 1;
-        for (char c : s.toCharArray()) {
-            if (c == '(' || c == '[' || c == '{') {
-                stack[top++] = c; 
-            } else if (c == ')' &amp;&amp; stack[--top] != '(') {
-                return false;
-            } else if (c == ']' &amp;&amp; stack[--top] != '[') {
-                return false;
-            } else if (c == '}' &amp;&amp; stack[--top] != '{') {
-                return false;
-            }
+    public int mySqrt(int x) {
+        long n = x;
+        while (n * n &gt; x) {
+            n = (n + x / n) &gt;&gt; 1;
         }
-        return top == 1;
-    }
-}
-</code></pre>
-<pre><code>class Solution {
-    public boolean isValid(String s) {
-        if(s==null||s.length()==0) return true;
-        List&lt;String&gt; list = new ArrayList&lt;&gt;();
-        Map&lt;Char,Char&gt; map = new HashMap&lt;&gt;();
-        map.add(')':'(');
-        map.add(']':'[');
-        map.add('}':'{');
-        boolean rightFirst = s.charAt(0).equals(')')||s.charAt(0).equals('}')||s.charAt(0).equals(']');
-        if(rightFirst) return false;
-        for(int i=0;i&lt;s.length();i++){
-            boolean leftFlag = s.charAt(i).equals('(')||s.charAt(i).equals('{')||s.charAt(i).equals('[');
-            boolean rightFlag = s.charAt(i).equals(')')||s.charAt(i).equals('}')||s.charAt(i).equals(']');
-            if(leftFlag){
-                list.add(s.charAt(i))
-            }else{
-                if(map(s.charAt(i)).equals(list(list.size()-1))){
-                    list.del(list.size()-1);
-                }else{
-                    return false;
-                }
-            }
-        }
-        if(list.size()==0){
-            return true;
-        }
+        return (int) n;
     }
 }
 </code></pre>
@@ -159,32 +129,41 @@
 </blockquote>
 <h3 id="tip">Tip</h3>
 <h4 id="日常小结4">日常小结4</h4>
-<p><strong>容器</strong></p>
+<p><strong>网络</strong></p>
 <ol>
-<li>List，Set，Map
-List存放数据有序，不唯一
-Set存放数据无序，唯一
-Map存放键值对</li>
-<li>HashMap和HashTable
-HashMap不是线程安全的，底层是通过数组+链表/红黑树的方式实现（jdk1.7和jdk1.8）
-HashTable是线程安全的，由于使用了sychronized，不建议使用，建议使用ConcurrentHashMap</li>
-<li>HashSet底层是HashMap</li>
+<li>三次握手</li>
 </ol>
-<p><strong>JVM</strong></p>
-<ol>
-<li>JRE和JDK，JRE是指Java运行环境，包括Java虚拟机和Java基础类库，JDK包括JRE以及javac编译工具等</li>
-<li>Java虚拟机加载Java类一般需要三个步骤，加载-链接-初始化
-加载：就是查找字节流，并且据此创建类的过程，通过类加载器。启动类加载器（bootstrap class loader），负责加载JRE的lib目录下jar包中的类，扩展类加载器是启动类加载器的孩子，负责加载lib/ext目录下jar包中的类，应用类加载器的父类是扩展类加载器，负责加载应用程序路径下的类。
-注意：双亲委派模型。类加载器还提供了命名空间。
-链接：是指将创建成的类合并至Java虚拟机中，使之能够执行的过程。它可分为验证、准备和解析三个阶段。</li>
+<p>三次握手的目的是建立可靠的通信信道，说到通讯，简单来说就是数据的发送与接收，而三次握手最主要的目的就是双方确认自己与对方的发送与接收是正常的。</p>
+<p>第一次握手：Client 什么都不能确认；Server 确认了对方发送正常，自己接收正常</p>
+<p>第二次握手：Client 确认了：自己发送、接收正常，对方发送、接收正常；Server 确认了：对方发送正常，自己接收正常</p>
+<p>第三次握手：Client 确认了：自己发送、接收正常，对方发送、接收正常；Server 确认了：自己发送、接收正常，对方发送、接收正常</p>
+<p>所以三次握手就能确认双发收发功能都正常，缺一不可。</p>
+<p>也就是只需要三次就够了，不需要额外确认其他信息了。</p>
+<ol start="2">
+<li>在浏览器中输入url地址 -&gt;&gt; 显示主页的过程</li>
 </ol>
+<p>DNS解析
+TCP连接
+发送HTTP请求
+服务器处理请求并返回HTTP报文
+浏览器解析渲染页面
+连接结束</p>
 <h3 id="share">Share</h3>
-<p>分享一篇关于JVM GC有关的文章<a href="https://my.oschina.net/hosee/blog/644618">JVM GC参数以及GC算法的应用</a></p>
+<p>分享一篇关于HTTP长连接、短连接有关的文章<a href="https://www.cnblogs.com/gotodsp/p/6366163.html">HTTP长连接、短连接究竟是什么？</a></p>
 
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://waterjiao.github.io/post/arts-di-qi-zhou">
+              <h3 class="post-title">
+                ARTS-第七周
+              </h3>
+            </a>
+          </div>
         
 
         
