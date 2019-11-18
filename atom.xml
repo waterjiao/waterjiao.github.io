@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-11-18T14:45:16.810Z</updated>
+    <updated>2019-11-18T14:59:33.832Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -16,7 +16,35 @@
         <link href="https://waterjiao.github.io/post/shu-ju-jie-gou-yu-suan-fa-shi-jian-fu-za-du-fen-xi">
         </link>
         <updated>2019-11-17T02:32:39.000Z</updated>
-        <content type="html"><![CDATA[<p>分析add函数的时间复杂度，最好，最坏，平均和均摊时间复杂度</p>
+        <content type="html"><![CDATA[<p>最好情况时间复杂度（best case time complexity）、最坏情况时间复杂度（worst case time complexity）、平均情况时间复杂度（average case time complexity）、均摊时间复杂度（amortized time complexity）</p>
+<pre><code>
+// n表示数组array的长度
+int find(int[] array, int n, int x) {
+  int i = 0;
+  int pos = -1;
+  for (; i &lt; n; ++i) {
+    if (array[i] == x) pos = i;
+  }
+  return pos;
+}
+</code></pre>
+<p>find函数用于查找array数组中是否含有x数字，如果含有输出x的下标，如果没找到，返回-1。这段代码的时间复杂度为O(n)，用大O来表示时间复杂度，大O中的n是指比较的次数，它的最好和最坏情况时间复杂度都是O(n)，把这段代码稍微改一下.</p>
+<pre><code>
+// n表示数组array的长度
+int find(int[] array, int n, int x) {
+  int i = 0;
+  int pos = -1;
+  for (; i &lt; n; ++i) {
+    if (array[i] == x){
+			pos = i;
+			break;
+			}
+  }
+  return pos;
+}
+</code></pre>
+<p>更改后的代码，它的最好和最坏情况时间复杂度就不同了，原因在于，一旦遍历到数值等于x，循环就结束了，最好情况就是x在数组的头一个，时间复杂度为O(1)，最坏情况就是x不在数组中，时间复杂度为O(n)。</p>
+<p>分析add函数的时间复杂度，最好，最坏，平均和均摊时间复杂度</p>
 <pre><code>
 // 全局变量，大小为10的数组array，长度len，下标i。
 int array[] = new int[10]; 
