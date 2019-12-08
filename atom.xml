@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-12-06T15:27:42.868Z</updated>
+    <updated>2019-12-08T15:37:44.361Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -10,6 +10,102 @@
     <logo>https://waterjiao.github.io/images/avatar.png</logo>
     <icon>https://waterjiao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Waterjiao</rights>
+    <entry>
+        <title type="html"><![CDATA[ARTS-第十一周]]></title>
+        <id>https://waterjiao.github.io/post/arts-</id>
+        <link href="https://waterjiao.github.io/post/arts-">
+        </link>
+        <updated>2019-12-08T15:36:31.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<h4 id="买卖股票的最佳时机买卖股票的最佳时机">买卖股票的最佳时机（<a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock">买卖股票的最佳时机</a>）</h4>
+<blockquote>
+<p>买卖股票的最佳时机。题目难度为 Easy</p>
+</blockquote>
+<p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
+<p>如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。</p>
+<p>注意你不能在买入股票前卖出股票。</p>
+<p><strong>示例1</strong></p>
+<pre><code>输入: [7,1,5,3,6,4]
+输出: 5
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
+</code></pre>
+<p><strong>示例2</strong></p>
+<pre><code>输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<h4 id="买卖股票的最佳时机买卖股票的最佳时机">买卖股票的最佳时机（<a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock">买卖股票的最佳时机</a>）</h4>
+<blockquote>
+<p>买卖股票的最佳时机。题目难度为 Easy</p>
+</blockquote>
+<p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
+<p>如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。</p>
+<p>注意你不能在买入股票前卖出股票。</p>
+<p><strong>示例1</strong></p>
+<pre><code>输入: [7,1,5,3,6,4]
+输出: 5
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
+</code></pre>
+<p><strong>示例2</strong></p>
+<pre><code>输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+</code></pre>
+<!-- more -->
+<p>思路1：卖出价格要大于买入价格，循环遍历数组，当前遍历值是买入价格，在买入价格之后才可以是卖出价格，再次循环遍历之后的数组，计算差值，就是利润值。</p>
+<pre><code>class Solution {
+    public int maxProfit(int[] prices) {
+        if(prices==null||prices.length==0) return 0;
+        int max = 0;
+        for(int i=0;i&lt;prices.length;i++){
+            int min = prices[i];
+            for(int j=i+1;j&lt;prices.length;j++){
+                if(max&lt;prices[j]-prices[i]){
+                    max = prices[j]-prices[i];
+                }
+            }
+        }
+        return max;
+    }
+}
+</code></pre>
+<p>思路2：题意是给出一个数组代表每天的股票金额，让你在最多买卖一次的情况下算出最大的收益额，最简单的就是模拟即可，每次记录当前值减去最小值的差值，与上一次的进行比较然后更新最大值即可。</p>
+<pre><code>class Solution {
+    public int maxProfit(int[] prices) {
+        int max = 0, minPrice = Integer.MAX_VALUE;
+        for (int i = 0; i &lt; prices.length; ++i) {
+            if (prices[i] &lt; minPrice) minPrice = prices[i];
+            int delta = prices[i] - minPrice;
+            if (delta &gt; max) max = delta;
+        }
+        return max;
+    }
+}
+</code></pre>
+<h3 id="review">Review</h3>
+<blockquote>
+<p>暂无，待补充</p>
+</blockquote>
+<h3 id="tip">Tip</h3>
+<h4 id="日常小结6">日常小结6</h4>
+<blockquote>
+<p>设计模式</p>
+</blockquote>
+<p>一、</p>
+<ol>
+<li>创建型模式：工厂模式、单例模式</li>
+<li></li>
+</ol>
+<h3 id="share">Share</h3>
+<p>分享一篇关于通过源码一步一步分析ArrayList 扩容机制有关的文章<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/collection/ArrayList-Grow.md">通过源码一步一步分析ArrayList 扩容机制</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[十分钟入门go语言]]></title>
         <id>https://waterjiao.github.io/post/shi-fen-zhong-ru-men-go-yu-yan</id>
@@ -710,107 +806,6 @@ newCachedThreadPool()会创建新的线程，当池中所有线程都处于运�
 </ul>
 <h3 id="share">Share</h3>
 <p>分享一篇美团技术团队的[Java NIO浅析](https://zhuanlan.zhihu.com/p/23488863</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ARTS-第四周]]></title>
-        <id>https://waterjiao.github.io/post/arts-di-si-zhou</id>
-        <link href="https://waterjiao.github.io/post/arts-di-si-zhou">
-        </link>
-        <updated>2019-08-04T02:47:22.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="arts">ARTS</h2>
-<h3 id="algorithm">Algorithm</h3>
-<h4 id="回文数palindrome-number">回文数（<a href="https://leetcode.com/problems/palindrome-number">Palindrome Number</a>）</h4>
-<blockquote>
-<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。题目难度为 Easy</p>
-</blockquote>
-<p><strong>示例</strong></p>
-<pre><code>输入：121
-输出：true
-
-输入：-121
-输出：false
-</code></pre>
-<p><strong>进阶</strong>
-不将整数转化为字符串</p>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="arts">ARTS</h2>
-<h3 id="algorithm">Algorithm</h3>
-<h4 id="回文数palindrome-number">回文数（<a href="https://leetcode.com/problems/palindrome-number">Palindrome Number</a>）</h4>
-<blockquote>
-<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。题目难度为 Easy</p>
-</blockquote>
-<p><strong>示例</strong></p>
-<pre><code>输入：121
-输出：true
-
-输入：-121
-输出：false
-</code></pre>
-<p><strong>进阶</strong>
-不将整数转化为字符串</p>
-<!-- more -->
-<p>思路：不将整数转化为字符串，首先可以确定的是负数一定不是回文数，因为带有负数符号，接着只需要比较数字倒置后的大小是否和之前数字大小相同即可。</p>
-<pre><code>class Solution{
-	public boolean isPalindrome(int x) {
-		if(x&lt;0) return false;
-		int revse = 0;
-		int origin = x;
-		while(x!=0){
-			revse = revse*10+x%10;
-			x = x/10;
-			}
-	return revse==origin;
-}
-</code></pre>
-<h3 id="review">Review</h3>
-<blockquote>
-<p><a href="https://www.infoq.com/articles/single-file-execution-java11/">Running Single-file Programs without Compiling in Java 11</a></p>
-</blockquote>
-<p>在java11之前，写完helloworld后，需要javac生成helloworld.class文件，再使用java helloworld来运行程序，在java11，只需要使用java helloworld.java即可。</p>
-<ol>
-<li>java11可以像脚本一样运行单文件</li>
-<li>一个文件下可以有多个公共类</li>
-<li>接1，单文件可以不需要class文件</li>
-<li>运行时，文件名和类名可以不相同</li>
-</ol>
-<h3 id="tip">Tip</h3>
-<h4 id="日常小结1">日常小结1</h4>
-<p><strong>反射</strong></p>
-<p>java反射机制是在运行状态中，对于任意一个类都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意方法和属性。
-获取class对象的三种方式：</p>
-<ol>
-<li>Object-&gt;getClass()</li>
-<li>任何数据类型都有一个静态的class属性</li>
-<li>通过class类的静态方法：forName(String className)</li>
-</ol>
-<p><strong>Arrays.asList()</strong>
-Arrays.asList()可以将数组转化为集合，但转化后底层其实还是数组，Arrays.asList()返回的是java.util.Arrays的一个内部类class java.util.Arrays$ArrayList</p>
-<pre><code>String[] str = new String[]{&quot;you&quot;,&quot;me&quot;);
-List&lt;String&gt; list = Arrays.asList(str);
-</code></pre>
-<ol>
-<li>底层还是数组</li>
-</ol>
-<pre><code>list.add(&quot;he&quot;) //抛出异常UnsupportedOperationException()
-public void add(int index, E element) {
-        throw new UnsupportedOperationException();
-}
-</code></pre>
-<p>如果想要使其不抛出异常，则要使用</p>
-<pre><code>List&lt;String&gt; list = new ArrayList&lt;&gt;(Arrays.asList(str));
-</code></pre>
-<ol start="2">
-<li>改变原有数组的内容，list也随着改变</li>
-</ol>
-<pre><code>str[0] = &quot;he&quot;;
-System.out.println(list.get(0)); //输出he
-</code></pre>
-<p><strong>重载和重写</strong></p>
-<p>重载：发生在同一类中，方法名必须相同，参数类型不同，个数不同，顺序不同，方法返回值和访问值可以不同，发生在编译时。
-重写：发生在子类父类中，方法名，参数列表必须相同，返回值范围小于父类，抛出的异常范围小于等于父类，访问修饰符范围大于等于父类，如果父类的访问修饰方法为private，则子类不能重写该方法。</p>
-<h3 id="share">Share</h3>
-<p>分享一篇关于如何学习Java IO<a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247484946&amp;idx=1&amp;sn=043b054de3aef29bf3ff80eea15c16fd&amp;source=41#wechat_redirect">Java IO，硬骨头也能变软</a></p>
 ]]></content>
     </entry>
 </feed>
