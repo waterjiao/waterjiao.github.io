@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-12-08T15:37:44.361Z</updated>
+    <updated>2019-12-09T14:32:36.808Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -11,9 +11,105 @@
     <icon>https://waterjiao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Waterjiao</rights>
     <entry>
+        <title type="html"><![CDATA[ARTS-第十二周]]></title>
+        <id>https://waterjiao.github.io/post/arts-di-shi-er-zhou</id>
+        <link href="https://waterjiao.github.io/post/arts-di-shi-er-zhou">
+        </link>
+        <updated>2019-12-09T14:22:03.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<h4 id="买卖股票的最佳时机买卖股票的最佳时机">买卖股票的最佳时机（<a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock">买卖股票的最佳时机</a>）</h4>
+<blockquote>
+<p>买卖股票的最佳时机。题目难度为 Easy</p>
+</blockquote>
+<p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
+<p>如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。</p>
+<p>注意你不能在买入股票前卖出股票。</p>
+<p><strong>示例1</strong></p>
+<pre><code>输入: [7,1,5,3,6,4]
+输出: 5
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
+</code></pre>
+<p><strong>示例2</strong></p>
+<pre><code>输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<h4 id="买卖股票的最佳时机买卖股票的最佳时机">买卖股票的最佳时机（<a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock">买卖股票的最佳时机</a>）</h4>
+<blockquote>
+<p>买卖股票的最佳时机。题目难度为 Easy</p>
+</blockquote>
+<p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
+<p>如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。</p>
+<p>注意你不能在买入股票前卖出股票。</p>
+<p><strong>示例1</strong></p>
+<pre><code>输入: [7,1,5,3,6,4]
+输出: 5
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
+</code></pre>
+<p><strong>示例2</strong></p>
+<pre><code>输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+</code></pre>
+<!-- more -->
+<p>思路1：卖出价格要大于买入价格，循环遍历数组，当前遍历值是买入价格，在买入价格之后才可以是卖出价格，再次循环遍历之后的数组，计算差值，就是利润值。</p>
+<pre><code>class Solution {
+    public int maxProfit(int[] prices) {
+        if(prices==null||prices.length==0) return 0;
+        int max = 0;
+        for(int i=0;i&lt;prices.length;i++){
+            int min = prices[i];
+            for(int j=i+1;j&lt;prices.length;j++){
+                if(max&lt;prices[j]-prices[i]){
+                    max = prices[j]-prices[i];
+                }
+            }
+        }
+        return max;
+    }
+}
+</code></pre>
+<p>思路2：题意是给出一个数组代表每天的股票金额，让你在最多买卖一次的情况下算出最大的收益额，最简单的就是模拟即可，每次记录当前值减去最小值的差值，与上一次的进行比较然后更新最大值即可。</p>
+<pre><code>class Solution {
+    public int maxProfit(int[] prices) {
+        int max = 0, minPrice = Integer.MAX_VALUE;
+        for (int i = 0; i &lt; prices.length; ++i) {
+            if (prices[i] &lt; minPrice) minPrice = prices[i];
+            int delta = prices[i] - minPrice;
+            if (delta &gt; max) max = delta;
+        }
+        return max;
+    }
+}
+</code></pre>
+<h3 id="review">Review</h3>
+<blockquote>
+<p>暂无，待补充</p>
+</blockquote>
+<h3 id="tip">Tip</h3>
+<h4 id="docker">Docker</h4>
+<blockquote>
+<p>本周主要是Docker的学习</p>
+</blockquote>
+<p>一、</p>
+<ol>
+<li>创建型模式：工厂模式、单例模式</li>
+<li></li>
+</ol>
+<h3 id="share">Share</h3>
+<p>分享一篇关于通过源码一步一步分析ArrayList 扩容机制有关的文章<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/collection/ArrayList-Grow.md">通过源码一步一步分析ArrayList 扩容机制</a></p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[ARTS-第十一周]]></title>
-        <id>https://waterjiao.github.io/post/arts-</id>
-        <link href="https://waterjiao.github.io/post/arts-">
+        <id>https://waterjiao.github.io/post/arts--di-shi-yi-zhou</id>
+        <link href="https://waterjiao.github.io/post/arts--di-shi-yi-zhou">
         </link>
         <updated>2019-12-08T15:36:31.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="arts">ARTS</h2>
@@ -93,15 +189,33 @@
 <p>暂无，待补充</p>
 </blockquote>
 <h3 id="tip">Tip</h3>
-<h4 id="日常小结6">日常小结6</h4>
+<h4 id="golang">Golang</h4>
 <blockquote>
-<p>设计模式</p>
+<p>本周主要是Go语言的学习</p>
 </blockquote>
-<p>一、</p>
+<p>一、基础</p>
 <ol>
-<li>创建型模式：工厂模式、单例模式</li>
-<li></li>
+<li>变量
+通过var关键字来声明，在函数和方法中还可以使用简短声明</li>
 </ol>
+<pre><code>var name string
+
+func getName() string{
+	name:=&quot;xiaoLi&quot;
+	return name
+}
+</code></pre>
+<ol start="2">
+<li>常量
+通过const关键字来声明</li>
+</ol>
+<pre><code>const a int = 0
+const b int = iota   //0
+           c                   //1
+					 d                  //2
+const	e int = 100
+           f                   //4
+</code></pre>
 <h3 id="share">Share</h3>
 <p>分享一篇关于通过源码一步一步分析ArrayList 扩容机制有关的文章<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/collection/ArrayList-Grow.md">通过源码一步一步分析ArrayList 扩容机制</a></p>
 ]]></content>
@@ -683,129 +797,6 @@ volatile和synchronized的区别，voilate关键字是用于内存可见，由�
 <li>侧边放置dock，将功能键F1等设置为标准功能键，特殊功能需要Fn键配合使用</li>
 <li>壮壮，希望你个小毛孩一切安好</li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ARTS-第五周]]></title>
-        <id>https://waterjiao.github.io/post/arts-di-wu-zhou</id>
-        <link href="https://waterjiao.github.io/post/arts-di-wu-zhou">
-        </link>
-        <updated>2019-08-05T14:11:29.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="arts">ARTS</h2>
-<h3 id="algorithm">Algorithm</h3>
-<h4 id="罗马数字转整数roman-to-integer">罗马数字转整数（<a href="https://leetcode-cn.com/problems/integer-to-roman/">Roman to Integer</a>）</h4>
-<blockquote>
-<p>给定一个整数，将其转为罗马数字。输入确保在 1 到 3999 的范围内。题目难度为 Easy</p>
-</blockquote>
-<p><strong>示例</strong></p>
-<pre><code>输入: &quot;III&quot;
-输出: 3
-
-输入: &quot;MCMXCIV&quot;
-输出:1994
-解释: M = 1000, CM = 900, XC = 90, IV = 4.
-</code></pre>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="arts">ARTS</h2>
-<h3 id="algorithm">Algorithm</h3>
-<h4 id="罗马数字转整数roman-to-integer">罗马数字转整数（<a href="https://leetcode-cn.com/problems/integer-to-roman/">Roman to Integer</a>）</h4>
-<blockquote>
-<p>给定一个整数，将其转为罗马数字。输入确保在 1 到 3999 的范围内。题目难度为 Easy</p>
-</blockquote>
-<p><strong>示例</strong></p>
-<pre><code>输入: &quot;III&quot;
-输出: 3
-
-输入: &quot;MCMXCIV&quot;
-输出:1994
-解释: M = 1000, CM = 900, XC = 90, IV = 4.
-</code></pre>
-<!-- more -->
-<p>思路：利用 map 来完成罗马数字的 7 个数字符号：I、V、X、L、C、D、M 和整数的映射关系，对应1，5，10，50，100，500，1000，如果小的数字在大的数字的左边，表示的数为大的数字减去小的数字</p>
-<pre><code>class Solution {
-    public int romanToInt(String s) {
-        Map&lt;Character,Integer&gt; map = new HashMap&lt;&gt;();
-				map.put('I',1);
-				map.put('V',5);
-				map.put('X',10);
-				map.put('L',50);
-				map.put('C',100);
-				map.put('D',500);
-				map.put('M',1000);
-				int length = s.length();
-				int sum = map.get(s.charAt(length-1));
-			  for( int i= length-2;i&gt;0;i--){
-				    if (map.get(s.charAt(i)) &lt; map.get(s.charAt(i + 1))) {
-                sum -= map.get(s.charAt(i));
-            } else {
-                sum += map.get(s.charAt(i));
-            }
-        }
-        return sum;
-    }
-}
-</code></pre>
-<h3 id="review">Review</h3>
-<blockquote>
-<p>暂无，待补充</p>
-</blockquote>
-<h3 id="tip">Tip</h3>
-<h4 id="日常小结2">日常小结2</h4>
-<p><strong>线程</strong></p>
-<ol>
-<li>线程的五种状态：新建、就绪、运行、阻塞（等待资源）和终止</li>
-<li>sleep()方法，抛出InterruptedException
-public static native void sleep(long millis) throws InterruptedException</li>
-<li>yeild()方法，让出cpu时间
-public static native void yeild()
-native关键字说明其修饰方法是一个原生态方法，方法实现不是当前文件，而是在其他语言（如C和    C++）实现的文件中</li>
-<li>join方法，让调用join的线程等待该线程结束
-public final void join() throws InterruptedException</li>
-<li>当线程不安全时（对同一对象进行操作时，没有加锁），可以使用synchronized关键字，使用显示锁，使用原子变量，使其变得安全</li>
-<li>内存可见性：一个线程对内存的修改，另一个线程看不到，一是修改没有及时同步到内存，二是另一个线程根本就没有从内存中读。使用voilate关键字，或者使用synchronized关键字、显式锁同步。</li>
-<li>synchronized，修饰类的实例方法、静态方法和代码块
-synchronized实例方法实际保护的是同一个对象的方法调用，一般在保护变量时，需要在所有访问该变量的方法上加上synchronized</li>
-<li>原子变量
-AtomicInteger，原子变量，包含一些以原子方式实现组合操作的方法</li>
-</ol>
-<pre><code>		public class AtomicIntegerDemo{
-	      private static AtomicInteger counter = new AtomicInteger(0);
-				static class Visitor extends Thread{
-				    @Override
-						public void run(){
-						    for(int i=0;i&lt;1000;i++){
-								    counter.incrementAndGet();
-								}
-						}
-				}
-		}
-		
-</code></pre>
-<p><strong>线程池</strong></p>
-<p>什么是线程池，如何使用，为什么要用？</p>
-<ol>
-<li>减少创建和销毁线程的开销</li>
-<li>根据情况调节线程池中的线程的数量</li>
-</ol>
-<p>Executor接口来执行线程池的任务
-ExecutorService接口来管理和控制任务
-newFixedThreadPool(int)在池中创建线程
-newCachedThreadPool()会创建新的线程，当池中所有线程都处于运行状态，60s销毁
-线程池的四个组成部分：</p>
-<ol>
-<li>线程池管理</li>
-<li>工作线程</li>
-<li>任务接口</li>
-<li>任务队列</li>
-</ol>
-<ul>
-<li>newSingleThreadExecutor 唯一线程，出错新建</li>
-<li>newFixedThreadPool(int) 创建固定数量的线程池</li>
-<li>newCachedThreadPool 创建缓存线程池，60s销毁</li>
-<li>newScheduledThreadPool 创建一个大小无限的线程池</li>
-</ul>
-<h3 id="share">Share</h3>
-<p>分享一篇美团技术团队的[Java NIO浅析](https://zhuanlan.zhihu.com/p/23488863</p>
 ]]></content>
     </entry>
 </feed>
