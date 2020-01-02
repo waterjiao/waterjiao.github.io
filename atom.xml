@@ -2,14 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2019-12-29T12:42:07.487Z</updated>
+    <updated>2020-01-02T14:55:06.608Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
     <logo>https://waterjiao.github.io/images/avatar.png</logo>
     <icon>https://waterjiao.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, Waterjiao</rights>
+    <rights>All rights reserved 2020, Waterjiao</rights>
+    <entry>
+        <title type="html"><![CDATA[Fitness-2020]]></title>
+        <id>https://waterjiao.github.io/post/fitness-2020</id>
+        <link href="https://waterjiao.github.io/post/fitness-2020">
+        </link>
+        <updated>2020-01-02T14:53:19.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>1月，学习和健身
+|  星期一  | 星期二  |  星期三  |  星期四  |  星期五  |  星期六  | 星期日  |
+|  ----  | ----  | ----  | ----  | ----  | ----  | ----  |
+|||1(生病)|2(生病)|3|4|5|</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ARTS-第十三周]]></title>
         <id>https://waterjiao.github.io/post/arts-di-13-zhou</id>
@@ -778,110 +792,6 @@ HashTable是线程安全的，由于使用了sychronized，不建议使用，建
 <li>小丑</li>
 <li></li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ARTS-第六周]]></title>
-        <id>https://waterjiao.github.io/post/arts-di-liu-zhou</id>
-        <link href="https://waterjiao.github.io/post/arts-di-liu-zhou">
-        </link>
-        <updated>2019-08-15T13:35:36.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="arts">ARTS</h2>
-<h3 id="algorithm">Algorithm</h3>
-<h4 id="最长公共前缀longest-common-prefix">最长公共前缀（<a href="https://leetcode-cn.com/problems/longest-common-prefix/?utm_source=LCUS&amp;utm_medium=ip_redirect_q_uns&amp;utm_campaign=transfer2china">Longest Common Prefix</a>）</h4>
-<blockquote>
-<p>编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 &quot;&quot;。题目难度为 Easy</p>
-</blockquote>
-<p><strong>示例</strong></p>
-<pre><code>输入: [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]
-输出: &quot;fl&quot;
-
-输入: [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]
-输出: &quot;&quot;
-解释: 输入不存在公共前缀。
-</code></pre>
-<p><strong>说明:</strong>
-所有输入只包含小写字母 a-z 。</p>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="arts">ARTS</h2>
-<h3 id="algorithm">Algorithm</h3>
-<h4 id="最长公共前缀longest-common-prefix">最长公共前缀（<a href="https://leetcode-cn.com/problems/longest-common-prefix/?utm_source=LCUS&amp;utm_medium=ip_redirect_q_uns&amp;utm_campaign=transfer2china">Longest Common Prefix</a>）</h4>
-<blockquote>
-<p>编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 &quot;&quot;。题目难度为 Easy</p>
-</blockquote>
-<p><strong>示例</strong></p>
-<pre><code>输入: [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]
-输出: &quot;fl&quot;
-
-输入: [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]
-输出: &quot;&quot;
-解释: 输入不存在公共前缀。
-</code></pre>
-<p><strong>说明:</strong>
-所有输入只包含小写字母 a-z 。</p>
-<!-- more -->
-<p>思路：找出最短的那个字符串的长度 minLen，然后在 0...minLen 的范围比较所有字符串，如果比较到有不同的字符，那么直接返回当前索引长度的字符串即可，否则最后返回最短的字符串即可。</p>
-<pre><code>class Solution {
-    public String longestCommonPrefix(String[] strs) {
-        int len = strs.length;
-        if (len == 0) return &quot;&quot;;
-        int minLen = 0x7fffffff;
-        for (String str : strs) minLen = Math.min(minLen, str.length());
-        for (int j = 0; j &lt; minLen; ++j)
-            for (int i = 1; i &lt; len; ++i)
-                if (strs[0].charAt(j) != strs[i].charAt(j))
-                    return strs[0].substring(0, j);
-        return strs[0].substring(0, minLen);
-    }
-}
-</code></pre>
-<h3 id="review">Review</h3>
-<blockquote>
-<p>暂无，待补充</p>
-</blockquote>
-<h3 id="tip">Tip</h3>
-<h4 id="日常小结3">日常小结3</h4>
-<p><strong>线程</strong></p>
-<ol>
-<li>wait和notify</li>
-</ol>
-<pre><code>public final void wait() throws InterruptedException
-public final void wait(long timeout) throws InterruptedException
-
-public final native void notify()
-public final native void notifyAll()
-</code></pre>
-<p>每个对象都有一个等待队列：条件队列。当调用notify()和notifyAll()时，从条件队列中移除，并唤醒</p>
-<ol start="2">
-<li>单例模式
-如何写好一个单例模式，不多说，直接写好，双重检测锁</li>
-</ol>
-<pre><code>public class Singleton{
-    private volatile Singleton singleton = null;
-		private Singleton(){}
-		public static Singleton getSingleton(){
-		    if(singleton != null){
-				    synchronize(Singleton.class){
-						    if(singleton != null){
-								    singleton = Singleton.getSingleton();
-										return singleton;
-								}
-						}
-				}
-				return singleton;
-		}
-}
-</code></pre>
-<p><strong>注意</strong>
-volatile和synchronized的区别，voilate关键字是用于内存可见，由于计算机中能够存储数据的地方有很多，当发生数据修改或者数据更改时，并不一定都是内存可见的，使用volatile关键字能够避免由于计算机指令计算所带来的影响。synchronzied关键字是提供锁，可用于实例方法，静态方法，代码块上，可以避免一些多线程使用所带来的问题。</p>
-<ul>
-<li>volatile关键字是线程同步的轻量级实现，所以volatile性能肯定比synchronized关键字要好。但是volatile关键字只能用于变量而synchronized关键字可以修饰方法以及代码块。synchronized关键字在JavaSE1.6之后进行了主要包括为了减少获得锁和释放锁带来的性能消耗而引入的偏向锁和轻量级锁以及其它各种优化之后执行效率有了显著提升，实际开发中使用 synchronized 关键字的场景还是更多一些。</li>
-<li>多线程访问volatile关键字不会发生阻塞，而synchronized关键字可能会发生阻塞</li>
-<li>volatile关键字能保证数据的可见性，但不能保证数据的原子性。synchronized关键字两者都能保证。</li>
-<li>volatile关键字主要用于解决变量在多个线程之间的可见性，而 synchronized关键字解决的是多个线程之间访问资源的同步性。</li>
-</ul>
-<h3 id="share">Share</h3>
-<p>分享一篇关于事物隔离级别的文章<a href="https://github.com/waterjiao/JavaGuide/blob/master/docs/database/%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB(%E5%9B%BE%E6%96%87%E8%AF%A6%E8%A7%A3).md">事务隔离级别(图文详解)</a></p>
 ]]></content>
     </entry>
 </feed>
