@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ARTS-第五周 | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578675692898">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578836367766">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578675692898" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578836367766" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -143,18 +143,18 @@
 <p><strong>线程</strong></p>
 <ol>
 <li>线程的五种状态：新建、就绪、运行、阻塞（等待资源）和终止</li>
-<li>sleep()方法，抛出InterruptedException
+<li>sleep()方法，抛出InterruptedException<br>
 public static native void sleep(long millis) throws InterruptedException</li>
-<li>yeild()方法，让出cpu时间
-public static native void yeild()
+<li>yeild()方法，让出cpu时间<br>
+public static native void yeild()<br>
 native关键字说明其修饰方法是一个原生态方法，方法实现不是当前文件，而是在其他语言（如C和    C++）实现的文件中</li>
-<li>join方法，让调用join的线程等待该线程结束
+<li>join方法，让调用join的线程等待该线程结束<br>
 public final void join() throws InterruptedException</li>
 <li>当线程不安全时（对同一对象进行操作时，没有加锁），可以使用synchronized关键字，使用显示锁，使用原子变量，使其变得安全</li>
 <li>内存可见性：一个线程对内存的修改，另一个线程看不到，一是修改没有及时同步到内存，二是另一个线程根本就没有从内存中读。使用voilate关键字，或者使用synchronized关键字、显式锁同步。</li>
-<li>synchronized，修饰类的实例方法、静态方法和代码块
+<li>synchronized，修饰类的实例方法、静态方法和代码块<br>
 synchronized实例方法实际保护的是同一个对象的方法调用，一般在保护变量时，需要在所有访问该变量的方法上加上synchronized</li>
-<li>原子变量
+<li>原子变量<br>
 AtomicInteger，原子变量，包含一些以原子方式实现组合操作的方法</li>
 </ol>
 <pre><code>		public class AtomicIntegerDemo{
@@ -176,10 +176,10 @@ AtomicInteger，原子变量，包含一些以原子方式实现组合操作的�
 <li>减少创建和销毁线程的开销</li>
 <li>根据情况调节线程池中的线程的数量</li>
 </ol>
-<p>Executor接口来执行线程池的任务
-ExecutorService接口来管理和控制任务
-newFixedThreadPool(int)在池中创建线程
-newCachedThreadPool()会创建新的线程，当池中所有线程都处于运行状态，60s销毁
+<p>Executor接口来执行线程池的任务<br>
+ExecutorService接口来管理和控制任务<br>
+newFixedThreadPool(int)在池中创建线程<br>
+newCachedThreadPool()会创建新的线程，当池中所有线程都处于运行状态，60s销毁<br>
 线程池的四个组成部分：</p>
 <ol>
 <li>线程池管理</li>

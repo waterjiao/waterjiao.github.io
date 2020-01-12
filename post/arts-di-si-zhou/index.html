@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ARTS-第四周 | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578675692898">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578836367766">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578675692898" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578836367766" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -108,7 +108,7 @@
 输入：-121
 输出：false
 </code></pre>
-<p><strong>进阶</strong>
+<p><strong>进阶</strong><br>
 不将整数转化为字符串</p>
 <!-- more -->
 <p>思路：不将整数转化为字符串，首先可以确定的是负数一定不是回文数，因为带有负数符号，接着只需要比较数字倒置后的大小是否和之前数字大小相同即可。</p>
@@ -138,14 +138,14 @@
 <h3 id="tip">Tip</h3>
 <h4 id="日常小结1">日常小结1</h4>
 <p><strong>反射</strong></p>
-<p>java反射机制是在运行状态中，对于任意一个类都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意方法和属性。
+<p>java反射机制是在运行状态中，对于任意一个类都能够知道这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意方法和属性。<br>
 获取class对象的三种方式：</p>
 <ol>
 <li>Object-&gt;getClass()</li>
 <li>任何数据类型都有一个静态的class属性</li>
 <li>通过class类的静态方法：forName(String className)</li>
 </ol>
-<p><strong>Arrays.asList()</strong>
+<p><strong>Arrays.asList()</strong><br>
 Arrays.asList()可以将数组转化为集合，但转化后底层其实还是数组，Arrays.asList()返回的是java.util.Arrays的一个内部类class java.util.Arrays$ArrayList</p>
 <pre><code>String[] str = new String[]{&quot;you&quot;,&quot;me&quot;);
 List&lt;String&gt; list = Arrays.asList(str);
@@ -168,7 +168,7 @@ public void add(int index, E element) {
 System.out.println(list.get(0)); //输出he
 </code></pre>
 <p><strong>重载和重写</strong></p>
-<p>重载：发生在同一类中，方法名必须相同，参数类型不同，个数不同，顺序不同，方法返回值和访问值可以不同，发生在编译时。
+<p>重载：发生在同一类中，方法名必须相同，参数类型不同，个数不同，顺序不同，方法返回值和访问值可以不同，发生在编译时。<br>
 重写：发生在子类父类中，方法名，参数列表必须相同，返回值范围小于父类，抛出的异常范围小于等于父类，访问修饰符范围大于等于父类，如果父类的访问修饰方法为private，则子类不能重写该方法。</p>
 <h3 id="share">Share</h3>
 <p>分享一篇关于如何学习Java IO<a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247484946&amp;idx=1&amp;sn=043b054de3aef29bf3ff80eea15c16fd&amp;source=41#wechat_redirect">Java IO，硬骨头也能变软</a></p>

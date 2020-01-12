@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ARTS-第九周 | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578675692898">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578836367766">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578675692898" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578836367766" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -151,32 +151,32 @@
 <blockquote>
 <p>出至极客时间《数据结构与算法》-03 | 复杂度分析（上）：如何分析、统计算法的执行效率和资源消耗？-留言评论-姜威</p>
 </blockquote>
-<p>一、什么是复杂度分析？
-1.数据结构和算法解决是“如何让计算机更快时间、更省空间的解决问题”。
-2.因此需从执行时间和占用空间两个维度来评估数据结构和算法的性能。
-3.分别用时间复杂度和空间复杂度两个概念来描述性能问题，二者统称为复杂度。
-4.复杂度描述的是算法执行时间（或占用空间）与数据规模的增长关系。
-二、为什么要进行复杂度分析？
-1.和性能测试相比，复杂度分析有不依赖执行环境、成本低、效率高、易操作、指导性强的特点。
-2.掌握复杂度分析，将能编写出性能更优的代码，有利于降低系统开发和维护成本。
-三、如何进行复杂度分析？
-1.大O表示法
-1）来源
-算法的执行时间与每行代码的执行次数成正比，用T(n) = O(f(n))表示，其中T(n)表示算法执行总时间，f(n)表示每行代码执行总次数，而n往往表示数据的规模。
-2）特点
-以时间复杂度为例，由于时间复杂度描述的是算法执行时间与数据规模的增长变化趋势，所以常量阶、低阶以及系数实际上对这种增长趋势不产决定性影响，所以在做时间复杂度分析时忽略这些项。
-2.复杂度分析法则
-1）单段代码看高频：比如循环。
-2）多段代码取最大：比如一段代码中有单循环和多重循环，那么取多重循环的复杂度。
-3）嵌套代码求乘积：比如递归、多重循环等
-4）多个规模求加法：比如方法有两个参数控制两个循环的次数，那么这时就取二者复杂度相加。
-四、常用的复杂度级别？
-多项式阶：随着数据规模的增长，算法的执行时间和空间占用，按照多项式的比例增长。包括，
-O(1)（常数阶）、O(logn)（对数阶）、O(n)（线性阶）、O(nlogn)（线性对数阶）、O(n^2)（平方阶）、O(n^3)（立方阶）
-非多项式阶：随着数据规模的增长，算法的执行时间和空间占用暴增，这类算法性能极差。包括，
-O(2^n)（指数阶）、O(n!)（阶乘阶）
-O(2^n)（指数阶）、O(n!)（阶乘阶）
-五、如何掌握好复杂度分析方法？
+<p>一、什么是复杂度分析？<br>
+1.数据结构和算法解决是“如何让计算机更快时间、更省空间的解决问题”。<br>
+2.因此需从执行时间和占用空间两个维度来评估数据结构和算法的性能。<br>
+3.分别用时间复杂度和空间复杂度两个概念来描述性能问题，二者统称为复杂度。<br>
+4.复杂度描述的是算法执行时间（或占用空间）与数据规模的增长关系。<br>
+二、为什么要进行复杂度分析？<br>
+1.和性能测试相比，复杂度分析有不依赖执行环境、成本低、效率高、易操作、指导性强的特点。<br>
+2.掌握复杂度分析，将能编写出性能更优的代码，有利于降低系统开发和维护成本。<br>
+三、如何进行复杂度分析？<br>
+1.大O表示法<br>
+1）来源<br>
+算法的执行时间与每行代码的执行次数成正比，用T(n) = O(f(n))表示，其中T(n)表示算法执行总时间，f(n)表示每行代码执行总次数，而n往往表示数据的规模。<br>
+2）特点<br>
+以时间复杂度为例，由于时间复杂度描述的是算法执行时间与数据规模的增长变化趋势，所以常量阶、低阶以及系数实际上对这种增长趋势不产决定性影响，所以在做时间复杂度分析时忽略这些项。<br>
+2.复杂度分析法则<br>
+1）单段代码看高频：比如循环。<br>
+2）多段代码取最大：比如一段代码中有单循环和多重循环，那么取多重循环的复杂度。<br>
+3）嵌套代码求乘积：比如递归、多重循环等<br>
+4）多个规模求加法：比如方法有两个参数控制两个循环的次数，那么这时就取二者复杂度相加。<br>
+四、常用的复杂度级别？<br>
+多项式阶：随着数据规模的增长，算法的执行时间和空间占用，按照多项式的比例增长。包括，<br>
+O(1)（常数阶）、O(logn)（对数阶）、O(n)（线性阶）、O(nlogn)（线性对数阶）、O(n<sup>2)（平方阶）、O(n</sup>3)（立方阶）<br>
+非多项式阶：随着数据规模的增长，算法的执行时间和空间占用暴增，这类算法性能极差。包括，<br>
+O(2^n)（指数阶）、O(n!)（阶乘阶）<br>
+O(2^n)（指数阶）、O(n!)（阶乘阶）<br>
+五、如何掌握好复杂度分析方法？<br>
 复杂度分析关键在于多练，所谓孰能生巧。</p>
 <h3 id="share">Share</h3>
 <p>分享一篇关于通过源码一步一步分析ArrayList 扩容机制有关的文章<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/collection/ArrayList-Grow.md">通过源码一步一步分析ArrayList 扩容机制</a></p>

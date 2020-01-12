@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ARTS-第七周 | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578675692898">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578836367766">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578675692898" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578836367766" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -172,21 +172,21 @@
 <h4 id="日常小结4">日常小结4</h4>
 <p><strong>容器</strong></p>
 <ol>
-<li>List，Set，Map
-List存放数据有序，不唯一
-Set存放数据无序，唯一
+<li>List，Set，Map<br>
+List存放数据有序，不唯一<br>
+Set存放数据无序，唯一<br>
 Map存放键值对</li>
-<li>HashMap和HashTable
-HashMap不是线程安全的，底层是通过数组+链表/红黑树的方式实现（jdk1.7和jdk1.8）
+<li>HashMap和HashTable<br>
+HashMap不是线程安全的，底层是通过数组+链表/红黑树的方式实现（jdk1.7和jdk1.8）<br>
 HashTable是线程安全的，由于使用了sychronized，不建议使用，建议使用ConcurrentHashMap</li>
 <li>HashSet底层是HashMap</li>
 </ol>
 <p><strong>JVM</strong></p>
 <ol>
 <li>JRE和JDK，JRE是指Java运行环境，包括Java虚拟机和Java基础类库，JDK包括JRE以及javac编译工具等</li>
-<li>Java虚拟机加载Java类一般需要三个步骤，加载-链接-初始化
-加载：就是查找字节流，并且据此创建类的过程，通过类加载器。启动类加载器（bootstrap class loader），负责加载JRE的lib目录下jar包中的类，扩展类加载器是启动类加载器的孩子，负责加载lib/ext目录下jar包中的类，应用类加载器的父类是扩展类加载器，负责加载应用程序路径下的类。
-注意：双亲委派模型。类加载器还提供了命名空间。
+<li>Java虚拟机加载Java类一般需要三个步骤，加载-链接-初始化<br>
+加载：就是查找字节流，并且据此创建类的过程，通过类加载器。启动类加载器（bootstrap class loader），负责加载JRE的lib目录下jar包中的类，扩展类加载器是启动类加载器的孩子，负责加载lib/ext目录下jar包中的类，应用类加载器的父类是扩展类加载器，负责加载应用程序路径下的类。<br>
+注意：双亲委派模型。类加载器还提供了命名空间。<br>
 链接：是指将创建成的类合并至Java虚拟机中，使之能够执行的过程。它可分为验证、准备和解析三个阶段。</li>
 </ol>
 <h3 id="share">Share</h3>

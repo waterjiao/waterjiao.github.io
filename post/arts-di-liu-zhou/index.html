@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ARTS-第六周 | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578675692898">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578836367766">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578675692898" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578836367766" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -98,7 +98,7 @@
 输出: &quot;&quot;
 解释: 输入不存在公共前缀。
 </code></pre>
-<p><strong>说明:</strong>
+<p><strong>说明:</strong><br>
 所有输入只包含小写字母 a-z 。</p>
 <!-- more -->
 <p>思路：找出最短的那个字符串的长度 minLen，然后在 0...minLen 的范围比较所有字符串，如果比较到有不同的字符，那么直接返回当前索引长度的字符串即可，否则最后返回最短的字符串即可。</p>
@@ -134,7 +134,7 @@ public final native void notifyAll()
 </code></pre>
 <p>每个对象都有一个等待队列：条件队列。当调用notify()和notifyAll()时，从条件队列中移除，并唤醒</p>
 <ol start="2">
-<li>单例模式
+<li>单例模式<br>
 如何写好一个单例模式，不多说，直接写好，双重检测锁</li>
 </ol>
 <pre><code>public class Singleton{
@@ -153,7 +153,7 @@ public final native void notifyAll()
 		}
 }
 </code></pre>
-<p><strong>注意</strong>
+<p><strong>注意</strong><br>
 volatile和synchronized的区别，voilate关键字是用于内存可见，由于计算机中能够存储数据的地方有很多，当发生数据修改或者数据更改时，并不一定都是内存可见的，使用volatile关键字能够避免由于计算机指令计算所带来的影响。synchronzied关键字是提供锁，可用于实例方法，静态方法，代码块上，可以避免一些多线程使用所带来的问题。</p>
 <ul>
 <li>volatile关键字是线程同步的轻量级实现，所以volatile性能肯定比synchronized关键字要好。但是volatile关键字只能用于变量而synchronized关键字可以修饰方法以及代码块。synchronized关键字在JavaSE1.6之后进行了主要包括为了减少获得锁和释放锁带来的性能消耗而引入的偏向锁和轻量级锁以及其它各种优化之后执行效率有了显著提升，实际开发中使用 synchronized 关键字的场景还是更多一些。</li>

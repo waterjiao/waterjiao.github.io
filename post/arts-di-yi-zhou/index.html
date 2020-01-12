@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ARTS-第一周 | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578675692898">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578836367766">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578675692898" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578836367766" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -123,7 +123,7 @@
 <ol>
 <li>创建一个发布描述</li>
 <li>生成一个发布文件</li>
-<li>安装发布文件
+<li>安装发布文件<br>
 例如：下面我编写一个helloworld.py，就是helloworld，但是我又想在其他py文件中使用它，第一种方法：在同一目录下，直接import helloworld，第二种方法，放在解释器的site-package位置，第三种方法，放在标准库（当然不会），其实第一种还有就是from 不同目录 import helloworld</li>
 </ol>
 <pre><code class="language-python">def helloworld(name:str) -&gt; str:
@@ -132,7 +132,7 @@
 <p>按照第二种方法，模块安装到Site-package</p>
 <ol>
 <li>创建发布描述，要创建两个文件，这两个文件放在与helloworld.py文件的同一个文件夹中，第一个文件必须命名为setup.py</li>
-<li>另一个文件命名为README.txt
+<li>另一个文件命名为README.txt<br>
 下面来看一下setup.py中的内容</li>
 </ol>
 <pre><code class="language-python">from setuptools import setup
@@ -146,10 +146,10 @@ setup(
     py_modules=['helloworld'],
     )
 </code></pre>
-<p>之后输入命令：python3 setup.py sdist
-sdist作为一个参数
-形成helloworld-1.0.tar.gz
-最后完成第三步，发布
+<p>之后输入命令：python3 setup.py sdist<br>
+sdist作为一个参数<br>
+形成helloworld-1.0.tar.gz<br>
+最后完成第三步，发布<br>
 python3 -m pip install helloworld-1.0.tar.gz</p>
 <h3 id="share">Share</h3>
 <p>分享一篇关于SDN的吧，作者李呈，对于想了解OpenFlow协议的可以看看，<a href="https://www.sdnlab.com/1479.html">OpenFlow通信流程解读</a></p>

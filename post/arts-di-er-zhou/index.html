@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ARTS-第二周 | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578675692898">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578836367766">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578675692898" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578836367766" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -138,9 +138,9 @@ class AddTwoNums {
 <blockquote>
 <p><a href="https://www.infoq.com/articles/java-10-var-type/?useSponsorshipSuggestions=true">Explore the New Java 10 “var” Type: An Introduction and Hands-on Tutorial</a></p>
 </blockquote>
-<p>在Java 10以及之后，在声明局部变量类型的时候可以使用var来告知编译器进行类型推断，取代之前的类名或接口名。在变量初始化的阶段，就像 var s = “”;
-此外，for循环中的索引变量类型也可以使用var。它由编译器推断类型，然后将推断出的类型写入字节码中，也就是说它对运行时并没有任何影响，仅仅是一个语法糖，Java仍然是一种静态语言。
-除了局部变量之外，另外在属性和方法返回值类型中，不能使用var。 这样做是为了避免引起一些无法预知的错误，使用的时候尽量使需要推断的变量靠近它声明的地方，从而缓解可读性问题。
+<p>在Java 10以及之后，在声明局部变量类型的时候可以使用var来告知编译器进行类型推断，取代之前的类名或接口名。在变量初始化的阶段，就像 var s = “”;<br>
+此外，for循环中的索引变量类型也可以使用var。它由编译器推断类型，然后将推断出的类型写入字节码中，也就是说它对运行时并没有任何影响，仅仅是一个语法糖，Java仍然是一种静态语言。<br>
+除了局部变量之外，另外在属性和方法返回值类型中，不能使用var。 这样做是为了避免引起一些无法预知的错误，使用的时候尽量使需要推断的变量靠近它声明的地方，从而缓解可读性问题。<br>
 同时，还介绍了下JShell，从Java9之后，java开始引入了类似于python的交互式 REPL（Read-Eval-Print Loop，读取-求值-输出 循环）工具。windows，linux，macos直接在终端内，输入jshell即可。</p>
 <h3 id="tip">Tip</h3>
 <h4 id="python中参数传递时是按值传递呢还是按引用传递">Python中参数传递时，是按值传递呢，还是按引用传递？</h4>
@@ -172,9 +172,9 @@ double(line)
 print(line)
 #输出[1,2,'More data']
 </code></pre>
-<p>奇怪的事情发生了，是不是？
-其实，根据实际情况，Python的函数参数语义既支持按值调用也支持按引用调用。
-Python中的变量是对象引用。可以把变量中存储的值认为是值的内存地址，而不是它真正的值。Python函数支持的调用语义可以更准确地称为按对象引用调用语义。
+<p>奇怪的事情发生了，是不是？<br>
+其实，根据实际情况，Python的函数参数语义既支持按值调用也支持按引用调用。<br>
+Python中的变量是对象引用。可以把变量中存储的值认为是值的内存地址，而不是它真正的值。Python函数支持的调用语义可以更准确地称为按对象引用调用语义。<br>
 解释器会查看对象引用指示的值的类型，如果变量是可变的（列表、字典和集合），就会应用按引用调用；如果变量是不可变的（字符串、整数和元组），就会按值传入函数。</p>
 <h3 id="share">Share</h3>
 <p>分享一篇关于注解的吧，作者将注解比作标签，可以很好得解释一下注解<a href="https://blog.csdn.net/shengzhu1/article/details/81271409">Java注解深入浅出</a></p>
