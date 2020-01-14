@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Study | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1578836367766">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1579015843708">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1578836367766" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1579015843708" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -102,23 +102,18 @@
       <div class="post-abstract">
         <h2 id="arts">ARTS</h2>
 <h3 id="algorithm">Algorithm</h3>
-<h4 id="买卖股票的最佳时机买卖股票的最佳时机">买卖股票的最佳时机（<a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock">买卖股票的最佳时机</a>）</h4>
+<h4 id="删除字符串中的所有相邻重复项删除字符串中的所有相邻重复项">删除字符串中的所有相邻重复项（<a href="https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string">删除字符串中的所有相邻重复项</a>）</h4>
 <blockquote>
-<p>买卖股票的最佳时机。题目难度为 Easy</p>
+<p>删除字符串中的所有相邻重复项。题目难度为 Easy</p>
 </blockquote>
-<p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
-<p>如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。</p>
-<p>注意你不能在买入股票前卖出股票。</p>
+<p>给出由小写字母组成的字符串 S，重复项删除操作会选择两个相邻且相同的字母，并删除它们。</p>
+<p>在 S 上反复执行重复项删除操作，直到无法继续删除。</p>
+<p>在完成所有重复项删除操作后返回最终的字符串。答案保证唯一。</p>
 <p><strong>示例1</strong></p>
-<pre><code>输入: [7,1,5,3,6,4]
-输出: 5
-解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
-     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
-</code></pre>
-<p><strong>示例2</strong></p>
-<pre><code>输入: [7,6,4,3,1]
-输出: 0
-解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+<pre><code>输入：&quot;abbaca&quot;
+输出：&quot;ca&quot;
+解释：
+例如，在 &quot;abbaca&quot; 中，我们可以删除 &quot;bb&quot; 由于两字母相邻且相同，这是此时唯一可以执行删除操作的重复项。之后我们得到字符串 &quot;aaca&quot;，其中又只有 &quot;aa&quot; 可以执行重复项删除操作，所以最后的字符串为 &quot;ca&quot;。
 </code></pre>
 
       </di>
