@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2020-01-18T13:19:11.720Z</updated>
+    <updated>2020-02-02T15:53:35.502Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -108,7 +108,17 @@ Go 语言规范规定，在键类型的值之间必须可以施加操作符==和
 |  ----  | ----  | ----  | ----  | ----  | ----  | ----  |<br>
 |||1(生病)|2(生病)|3(生病)|4(生病)|5(生病)|<br>
 |6(生病)|7(生病)|8(生病)|9(生病)|10(生病)|11(年会)|12(生病)|<br>
-|13(胸)|14(胸)|15(被耽误)|16(加班)|17(加班)|18(休息)|19()|</p>
+|13(胸)|14(胸)|15(被耽误)|16(加班)|17(加班)|18(休息)|19()|<br>
+| 20   |21   |22   |23   |24   |25   |26   |27   |<br>
+| 28   |29   |30   |31   |   |   |   |   |</p>
+</blockquote>
+<blockquote>
+<p>2月，学习、读书和健身<br>
+|  星期一  | 星期二  |  星期三  |  星期四  |  星期五  |  星期六  | 星期日  |<br>
+|  ----  | ----  | ----  | ----  | ----  | ----  | ----  |<br>
+|    |   |   |   |   |1(dance)|2(恢复)|<br>
+|  3  |  4 | 5  | 6  |  7 |  8 |  9 |<br>
+|    |   |   |   |   |   |   |   |</p>
 </blockquote>
 ]]></content>
     </entry>
