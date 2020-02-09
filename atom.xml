@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://waterjiao.github.io</id>
     <title>Waterjiao</title>
-    <updated>2020-02-02T15:53:35.502Z</updated>
+    <updated>2020-02-09T13:58:19.254Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://waterjiao.github.io"/>
     <link rel="self" href="https://waterjiao.github.io/atom.xml"/>
@@ -10,6 +10,81 @@
     <logo>https://waterjiao.github.io/images/avatar.png</logo>
     <icon>https://waterjiao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Waterjiao</rights>
+    <entry>
+        <title type="html"><![CDATA[ARTS-第十五周]]></title>
+        <id>https://waterjiao.github.io/post/arts-di-shi-wu-zhou</id>
+        <link href="https://waterjiao.github.io/post/arts-di-shi-wu-zhou">
+        </link>
+        <updated>2020-01-18T13:18:01.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<h4 id="只出现一次的数字只出现一次的数字">只出现一次的数字（<a href="https://leetcode-cn.com/problems/single-number/">只出现一次的数字</a>）</h4>
+<blockquote>
+<p>只出现一次的数字。题目难度为 Easy</p>
+</blockquote>
+<p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p><strong>示例1</strong></p>
+<pre><code>输入: [2,2,1]
+输出: 1
+
+输入: [4,1,2,1,2]
+输出: 4
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="arts">ARTS</h2>
+<h3 id="algorithm">Algorithm</h3>
+<h4 id="只出现一次的数字只出现一次的数字">只出现一次的数字（<a href="https://leetcode-cn.com/problems/single-number/">只出现一次的数字</a>）</h4>
+<blockquote>
+<p>只出现一次的数字。题目难度为 Easy</p>
+</blockquote>
+<p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p><strong>示例1</strong></p>
+<pre><code>输入: [2,2,1]
+输出: 1
+
+输入: [4,1,2,1,2]
+输出: 4
+</code></pre>
+<!-- more -->
+<p>思路1：将数组排序，每隔两个进行遍历，找出不一样的数字即可</p>
+<pre><code class="language-go">import &quot;sort&quot;
+func singleNumber(nums []int) int {
+    sort.Ints(nums)
+    var a = nums[0]
+    for i:=0;i&lt;len(nums)-1;i+=2{
+        if nums[i] != nums[i+1]{
+            a = nums[i]
+            return a
+        }
+    }
+    if len(nums)%2 != 0 {
+        b := len(nums)
+        a = nums[b-1]
+    }
+    return a
+}
+</code></pre>
+<h3 id="review">Review</h3>
+<blockquote>
+<p>暂无，待补充，本周坚持每天学习15个英文单词</p>
+</blockquote>
+<h3 id="tip">Tip</h3>
+<h4 id="ipv6">IPv6</h4>
+<blockquote>
+<p>本周主要是网络IPv6和UML的学习<br>
+Don’t communicate by sharing memory; share memory by communicating.</p>
+</blockquote>
+<ol>
+<li></li>
+</ol>
+<h3 id="share">Share</h3>
+<blockquote>
+<p>暂无，待补充</p>
+</blockquote>
+<!-- more -->
+<!-- more -->
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ARTS-第十四周]]></title>
         <id>https://waterjiao.github.io/post/arts-di-14-zhou</id>
@@ -117,7 +192,7 @@ Go 语言规范规定，在键类型的值之间必须可以施加操作符==和
 |  星期一  | 星期二  |  星期三  |  星期四  |  星期五  |  星期六  | 星期日  |<br>
 |  ----  | ----  | ----  | ----  | ----  | ----  | ----  |<br>
 |    |   |   |   |   |1(dance)|2(恢复)|<br>
-|  3  |  4 | 5  | 6  |  7 |  8 |  9 |<br>
+|  3(dance)  |  4(休息) | 5(dance)  | 6(休息)  |  7(休息) |  8(休息) |  9(休息) |<br>
 |    |   |   |   |   |   |   |   |</p>
 </blockquote>
 ]]></content>
@@ -814,43 +889,6 @@ HashTable是线程安全的，由于使用了sychronized，不建议使用，建
 </ol>
 <h3 id="share">Share</h3>
 <p>分享一篇关于JVM GC有关的文章<a href="https://my.oschina.net/hosee/blog/644618">JVM GC参数以及GC算法的应用</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[影单]]></title>
-        <id>https://waterjiao.github.io/post/ying-dan</id>
-        <link href="https://waterjiao.github.io/post/ying-dan">
-        </link>
-        <updated>2019-08-27T14:01:16.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="8月">8月</h3>
-<blockquote>
-<p>对于部分剧集涉及到轻微剧透</p>
-</blockquote>
-<ol>
-<li>
-<p>切尔诺贝利-禁区<br>
-影评：看着名字以为是个纪录片，没想到是个科幻片，毛子的胆子可不是一般的大，还在看，看后再补充。</p>
-</li>
-<li>
-<p>寄生虫</p>
-</li>
-<li>
-<p>哈利波特与魔法石</p>
-</li>
-<li>
-<p>致命女人（Why Women Kill）</p>
-</li>
-<li>
-<p>小欢喜</p>
-</li>
-</ol>
-<h3 id="11月">11月</h3>
-<ol>
-<li>无耻之徒</li>
-<li>浴血黑帮</li>
-<li>小丑</li>
-<li></li>
-</ol>
 ]]></content>
     </entry>
 </feed>
