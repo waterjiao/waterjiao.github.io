@@ -1,0 +1,169 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>打卡 | Waterjiao</title>
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1581949991099">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://waterjiao.github.io">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1581949991099" alt="">
+  </a>
+  <h1 class="site-title">
+    Waterjiao
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              打卡
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2020-02-13 ·
+              </time>
+              
+                <a href="https://waterjiao.github.io/tag/tWfE2Yt2T" class="post-tag">
+                  # Study
+                </a>
+              
+            </div>
+            
+              <div class="post-feature-image" style="background-image: url('https://waterjiao.github.io/post-images/da-qia.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <h1 id="21天打卡计划">21天打卡计划</h1>
+<p>Day1<br>
+学习课程：《趣谈网络协议》第13讲<br>
+打卡笔记：<br>
+在网络层，Socket 函数需要指定是 IPv4 还是 IPv6， AF_INET 和 AF_INET6。还要指定是 TCP 还是 UDP，为 SOCK_STREAM 和 SOCK_DGRAM。<br>
+对于TCP，服务端要先调用bind函数，给这个Socket赋值IP和Port，再调用listen函数进行监听。客户端用过connect函数发起连接，经过三次握手，这里注意，一旦握手成功，服务端的accept函数会返回另一个Socket，监听Socket和已连接Socket。<br>
+对于UDP，没有三次握手，服务端调用bind和listen，由于不需要维护连接状态，只要有一个Socket就可以和多个客户端通信，客户端和服务端都调用sendto和recvfrom。<br>
+服务端维护多个Socket连接的方法：<br>
+1）多进程<br>
+2）多线程<br>
+3）IO多路复用，一个线程维护多个Socket<br>
+4）IO多路复用，epoll<br>
+文件描述符（file descriptor）是内核为了高效管理已被打开的文件所创建的索引，其是一个非负整数（通常是小整数），用于指代被打开的文件，所有执行I/O操作的系统调用都通过文件描述符。</p>
+<h1 id="21天打卡计划-2">21天打卡计划</h1>
+<p>Day2<br>
+学习课程：《趣谈网络协议》第14讲<br>
+打卡笔记：<br>
+1.应用层 http协议，简单例子，访问网页时，首先根据url通过DNS转化为IP地址，传输层为TCP协议，经过三次握手 进行连接，四次挥手 断开连接，中间过程，IP层，数据链路层，物理层，经过ARP查找MAC地址，发送到目标。而QUIC基于 UDP连接，不需要三次握手，节省资源，提高了性能和效率;<br>
+2.http报文包括 请求行 、首部、正文实体，请求行包含方法、SP、URL、版本，首部包含首部字段名、SP、字段值、cr/if。实体就是正文实体。其中，方法就是GET、POST、PUT和DELETE方法。<br>
+3.http1.1发送请求时串行，http2.0发送请求时并行，http2.0可以通过头压缩、分帧、二进制编码、多路复用来提升传输效率。<br>
+4.Quic 全称 quick udp internet connection ，“快速 UDP 互联网连接”，（和英文 quick 谐音，简称“快”）是由 google 提出的使用 udp 进行多路并发传输的协议。<br>
+1）自定义连接机制，不基于四元组，基于随机ID<br>
+2）自定义重传机制<br>
+3）无阻塞多路复用<br>
+4）自定义流量控制。</p>
+<h1 id="21天打卡计划-3">21天打卡计划</h1>
+<p>Day3<br>
+学习课程：《趣谈网络协议》第15讲<br>
+打卡笔记：<br>
+公钥和私钥是成对的，它们互相解密。公钥加密，私钥解密。私钥数字签名，公钥验证。<br>
+http协议不安全，在安全要求下，一般使用https协议，加密的方法有两种对称和不对称。https协议中首先数字证书保证了服务端公钥的可靠性，客户端从CA库里查询确认可靠性，就用证书中公钥去加密pre-master，服务端收到加密后的数据，用自己的私钥去解开，得到pre-master，然后两边都有了①客户端的随机数 ②服务端的随机数 ③pre-master 然后就各自通过计算得到一样的值，就当做公钥。后面就是对称加密的数据传输。这个过程中，对称加密的公钥从来没有在网络上传输过，就很安全了。ca证书中的解密是通过不对称的加密方式实现的，而且保证了公钥的可靠性，所以这里不怕别人拿到公钥，因为私钥他没有，也不怕别人伪造私钥和公钥，因为ca保证了公钥是可靠的。</p>
+<h1 id="21天打卡计划-4">21天打卡计划</h1>
+<p>Day4<br>
+学习课程：《趣谈网络协议》第16讲<br>
+打卡笔记：<br>
+直播过程：主播端采样+编码+推流至服务端，服务端接流+流处理+分发至分发网络，观众从分发网络拉流+解码+播发。<br>
+视频是图片的序列，因此分为三种帧，I帧，P帧，B帧。每一帧又分成多个片，每个片分成多个宏块，压成二进制流为网络提取层单元NALU，NALU之间通过特殊的起始标识符分隔，在每个I帧前要插入单独保存SPS和PPS的NALU，形成NALU序列。<br>
+推流使用RTMP协议，基于TCP，主要是确定版本号和时间戳，在传输数据时，需要创建一个流Stream，通过这个Stream来推流publish。推送到流媒体集群的视频流经过转码和分发，可以被客户端通过 RTMP 协议拉取，然后组合为 NALU，解码成视频格式进行播放。这样就可以看直播了。</p>
+<h1 id="21天打卡计划-5">21天打卡计划</h1>
+<p>Day5<br>
+学习课程：《趣谈网络协议》第17讲<br>
+打卡笔记：<br>
+对于FTP服务器而言，FTP 有两种工作模式，分别是主动模式（PORT）和被动模式（PASV）。两种都是通过21端口进行连接，再开放20或大于1024的端口来进行数据传输。<br>
+P2P就是利用tracker中心服务器来记录每个下载者的信息，大家又利用记录了tarcker服务器地址的种子.torrent文件来进行下载，其中还记录了各个下载块。<br>
+DHT（Distributed Hash Table）去中心化网络，使用Kademlia 协议，就是每个加入到DHT网络中的节点都要负责存储部分资源信息和成员联系信息。利用哈希值来计算。DHT节点信息划分是通过按位数进行维护，节点信息维护是通过维护列表进行。Kademlia算法中，每个节点只有4个指令，分别是PING、STORE、FIND_NODE和FIND_VALUE。</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://waterjiao.github.io/post/arts-di-shi-wu-zhou">
+              <h3 class="post-title">
+                ARTS-第十五周
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/waterjiao" target="_blank">Waterjiao</a> | 
+  <a class="rss" href="https://waterjiao.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
