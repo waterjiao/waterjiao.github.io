@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>打卡 | Waterjiao</title>
-<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1581949991099">
+<link rel="shortcut icon" href="https://waterjiao.github.io/favicon.ico?v=1583652619856">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://waterjiao.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://waterjiao.github.io">
-  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1581949991099" alt="">
+  <img class="avatar" src="https://waterjiao.github.io/images/avatar.png?v=1583652619856" alt="">
   </a>
   <h1 class="site-title">
     Waterjiao
@@ -136,6 +136,149 @@ http协议不安全，在安全要求下，一般使用https协议，加密的�
 对于FTP服务器而言，FTP 有两种工作模式，分别是主动模式（PORT）和被动模式（PASV）。两种都是通过21端口进行连接，再开放20或大于1024的端口来进行数据传输。<br>
 P2P就是利用tracker中心服务器来记录每个下载者的信息，大家又利用记录了tarcker服务器地址的种子.torrent文件来进行下载，其中还记录了各个下载块。<br>
 DHT（Distributed Hash Table）去中心化网络，使用Kademlia 协议，就是每个加入到DHT网络中的节点都要负责存储部分资源信息和成员联系信息。利用哈希值来计算。DHT节点信息划分是通过按位数进行维护，节点信息维护是通过维护列表进行。Kademlia算法中，每个节点只有4个指令，分别是PING、STORE、FIND_NODE和FIND_VALUE。</p>
+<h1 id="21天打卡计划-6">21天打卡计划</h1>
+<p>Day6<br>
+学习课程：《趣谈网络协议》第18讲<br>
+打卡笔记：<br>
+DNS的作用就是将网站名称转化为IP地址，DNS服务器又根DNS服务器，顶级域DNS服务器和权威DNS服务器。<br>
+DNS的解析流程：客户端问www.baidu.com的IP是什么，本地域名服务器进行查询，没有就咨询根域名服务器，根域名服务器回复说去咨询.com顶级域名服务器，顶级域名服务器又说去咨询www.baidu.com的权威DNS服务器吧，本地DNS就去问权威DNS服务器，权威DNS服务器将IP地址返回，客户端与目标建立连接。<br>
+DNS的另外一个功能，就是负载均衡。在域名和 IP 的映射过程中，给了应用基于域名做负载均衡的机会，可以是简单的负载均衡，也可以根据地址和运营商做全局的负载均衡。</p>
+<h1 id="21天打卡计划-7">21天打卡计划</h1>
+<p>Day7<br>
+学习课程：《趣谈网络协议》第19讲<br>
+打卡笔记：<br>
+传统DNS<br>
+1）域名缓存问题，在一次请求后会在本地缓存，没有及时更新导致问题出现<br>
+2）域名转发问题，由于运营商DNS服务器将其转发，导致跨运营商访问问题出现<br>
+3）出口NAT问题，从NAT口出来的IP无法判断，导致跨运营商访问问题出现<br>
+4）域名更新问题，和1）关联性比较大<br>
+5）解析延迟问题，本地DNS，根DNS，顶级DNS，权威DNS，有延时<br>
+HTTPDNS<br>
+不走传统的 DNS 解析，而是自己搭建基于 HTTP 协议的 DNS 服务器集群，分布在多个地点和多个运营商。当客户端需要 DNS 解析的时候，通过 SDK 使用 HTTP 协议进行请求这个服务器集群，得到就近的地址。</p>
+<h1 id="21天打卡计划-8">21天打卡计划</h1>
+<p>Day8<br>
+学习课程：《趣谈网络协议》第20讲<br>
+打卡笔记：<br>
+CDN 的全称是 Content Delivery Network，即内容分发网络。<br>
+CDN的基本原理是广泛采用各种缓存服务器，将这些缓存服务器分布到用户访问相对集中的地区或网络中，在用户访问网站时，利用全局负载技术将用户的访问指向距离最近的工作正常的缓存服务器上，由缓存服务器直接响应用户请求。<br>
+CDN 和电商系统的分布式仓储系统一样，分为中心节点、区域节点、边缘节点，而数据缓存在离用户最近的位置。<br>
+CDN 最擅长的是缓存静态数据，除此之外还可以缓存流媒体数据，这时候要注意使用防盗链。它也支持动态数据的缓存，一种是边缘计算的生鲜超市模式，另一种是链路优化的冷链运输模式。</p>
+<h1 id="21天打卡计划-9">21天打卡计划</h1>
+<p>Day9<br>
+学习课程：《趣谈网络协议》第21讲<br>
+打卡笔记：<br>
+数据中心指用于安置计算机系统及相关部件的设施，例如电信和储存系统。一般它包含冗余和备用电源，冗余数据通信连接，环境控制和各种安全设备。<br>
+数据中心分为三层。服务器连接到接入层，然后是汇聚层，再然后是核心层，最外面是边界路由器和安全设备。<br>
+数据中心的所有链路都需要高可用性。服务器需要绑定网卡，交换机需要堆叠，三层设备可以通过等价路由，二层设备可以通过 TRILL 协议。<br>
+随着云和大数据的发展，东西流量相对于南北流量越来越重要，因而演化为叶脊网络结构。<br>
+大二层是指二层互联从汇聚层上升核心层，全部在一个广播域内。</p>
+<h1 id="21天打卡计划-10">21天打卡计划</h1>
+<p>Day10<br>
+学习课程：《趣谈网络协议》第22讲<br>
+打卡笔记：<br>
+VPN（ Virtual Private Network）虚拟专用网，就是利用开放的公众网络，建立专用数据传输通道，将远程的分支机构、移动办公人员等连接起来。VPN 通过隧道技术在公众网络上仿真一条点到点的专线，是通过利用一种协议来传输另外一种协议的技术，这里面涉及三种协议：乘客协议、隧道协议和承载协议。完全基于软件的 IPsec VPN 可以保证私密性、完整性、真实性、简单便宜，但是性能稍微差一些；MPLS-VPN 综合和 IP 转发模式和 ATM 的标签转发模式的优势，性能较好，但是需要从运营商购买。</p>
+<h1 id="21天打卡计划-11">21天打卡计划</h1>
+<p>Day11<br>
+学习课程：《Go语言核心36讲》第15讲<br>
+打卡笔记：<br>
+Go语言中以下值是不可寻址的：</p>
+<ul>
+<li>常量的值 // const num = 123  _ = &amp;num</li>
+<li>基本类型值的字面量 // _ = &amp;(123)</li>
+<li>对各种字面量的索引表达式和切片表达式的结果值</li>
+<li>对字符串变量的索引表达式和切片表达式的结果值</li>
+<li>对字典变量的索引表达式的结果值</li>
+<li>函数字面量和方法字面量，以及对它们的调用表达式的结果值</li>
+<li>结构体字面量的字段值</li>
+<li>类型转换表达式的结果值</li>
+<li>类型断言表达式的结果值</li>
+<li>接收表达式的结果值</li>
+</ul>
+<h1 id="21天打卡计划-12">21天打卡计划</h1>
+<p>Day12<br>
+学习课程：《趣谈网络协议》第23讲<br>
+打卡笔记：<br>
+手机上网过程：<br>
+1）手机开机后，寻找周围的eNodeB基站，然后发送Attach Request<br>
+2）eNodeB将请求发送给MME<br>
+3）MME去请求手机，认证和鉴权<br>
+4）当MME通过了手机的认证，分配隧道，和SGW创建session，分配隧道t1，告诉SGW给MME分配一个隧道口<br>
+5）SGW 转头向 PGW 请求建立一个会话，为 PGW 的控制面分配一个隧道 ID t2，也给 PGW 的数据面分配一个隧道 ID t3，并且请求 PGW 给自己的控制面和数据面分配隧道 ID<br>
+6）PGW 回复 SGW ，使用自己的控制面隧道 ID t2，回复里面携带着给 SGW 控制面分配的隧道 ID t4 和控制面的隧道 ID t5，隧道建设完成。双方请求对方，都要带着对方给自己分配的隧道 ID，从而标志是这个手机的请求。<br>
+7）接下来 SGW 回复 MME 说“创建会话成功”，使用自己的隧道 ID t1 访问 MME，回复里面有给 MME 分配隧道 ID t6，也有 SGW 给 eNodeB 分配的隧道 ID t7。<br>
+8）当 MME 发现后面的隧道都建设成功之后，就告诉 eNodeB，“后面的隧道已经建设完毕，SGW 给你分配的隧道 ID 是 t7，你可以开始连上来了，但是你也要给 SGW 分配一个隧道 ID”。<br>
+9）eNodeB 告诉 MME 自己给 SGW 分配一个隧道，ID 为 t8。<br>
+10）MME 将 eNodeB 给 SGW 分配的隧道 ID t8 告知 SGW，从而前面的隧道也建设完毕。<br>
+手机可以上网了。</p>
+<h1 id="21天打卡计划-13">21天打卡计划</h1>
+<p>Day13<br>
+学习课程：《深入剖析Kubernetes》第13讲<br>
+打卡笔记：<br>
+Namespace 做隔离，Cgroups 做限制，rootfs 做文件系统。<br>
+Pod 里的所有容器，共享的是同一个 Network Namespace，并且可以声明共享同一个 Volume。<br>
+查看容器在宿主机的Namespace文件，在。。。<br>
+为 Kubernetes 开发一个网络插件时，应该重点考虑的是如何配置这个 Pod 的 Network Namespace，而不是每一个用户容器如何使用你的网络配置。<br>
+“组合”操作，正是容器设计模式里最常用的一种模式，它的名字叫：sidecar。<br>
+yaml文件中Init Contaniner定义的容器在spec.containers定义的用户容器先启动。<br>
+Pod，实际上是在扮演传统基础设施里“虚拟机”的角色；而容器，则是这个虚拟机里运行的用户程序。</p>
+<h1 id="21天打卡计划-14">21天打卡计划</h1>
+<p>Day18<br>
+学习课程：《趣谈网络协议》第26讲<br>
+打卡笔记：<br>
+对于公有云上的虚拟机，仅仅开放需要的端口，将其他的端口一概关闭，只要通过安全措施守护好这个唯一的入口就可以了。采用的方式常常是用 ACL（Access Control List，访问控制列表）来控制 IP 和端口。<br>
+PREROUTING - 路由判断 - FORWARD - OUTPIUT - POSTROUTING<br>
+｜                           ｜<br>
+INPUT                      路由判断<br>
+｜                           ｜<br>
+上层协议栈</p>
+<p>PREROUTING，INPUT，FORWARD，OUTPIUT，POSTROUTING对应的5个节点<br>
+iptables 的表分为四种：raw–&gt;mangle–&gt;nat–&gt;filter。<br>
+mangle 表主要是修改数据包，包含：PREROUTING，INPUT，FORWARD，OUTPIUT，POSTROUTING链。<br>
+Netfilter 的连接跟踪（conntrack）功能，用于识别nat转换。<br>
+源地址转换 (Snat)：iptables -t nat -A -s 私网 IP -j Snat --to-source 外网 IP<br>
+目的地址转换 (Dnat)：iptables -t nat -A -PREROUTING -d 外网 IP -j Dnat --to-destination 私网 IP</p>
+<h1 id="21天打卡计划-15">21天打卡计划</h1>
+<p>Day19<br>
+学习课程：《趣谈网络协议》第27讲<br>
+打卡笔记：<br>
+在 Linux 下，可以通过 TC 控制网络的 QoS，主要就是通过队列的方式。<br>
+云中的流量控制主要通过队列进行的，队列分为两大类：无类别队列规则和基于类别的队列规则。<br>
+无类别排队规则有pfifo_fast，这是一种不把网络包分类的技术；随机公平队列（Stochastic Fair Queuing）；令牌桶规则（TBF，Token Bucket Filte）。<br>
+在云中网络 Openvswitch 中，主要使用的是分层令牌桶规则（HTB），将总的带宽在一棵树上按照配置的比例进行分配，并且在一个分支不用的时候，可以借给另外的分支，从而增强带宽利用率。</p>
+<h1 id="21天打卡计划-16">21天打卡计划</h1>
+<p>Day20<br>
+学习课程：《趣谈网络协议》第28讲<br>
+打卡笔记：<br>
+要对不同用户的网络进行隔离，解决 VLAN 数目有限的问题，需要通过 Overlay 的方式，常用的有 GRE 和 VXLAN。<br>
+GRE 是一种点对点的隧道模式，VXLAN 支持组播的隧道模式，它们都要在某个 Tunnel Endpoint 进行封装和解封装，来实现跨物理机的互通。<br>
+OpenvSwitch 可以作为 Tunnel Endpoint，通过设置流表的规则，将虚拟机网络和物理机网络进行隔离、转换。<br>
+ovs基本命令：<br>
+ovs-vsctl add-br br0<br>
+ovs-vsctl add-port br0 eth0<br>
+ovs-vsctl add-bond br0 port0 eth2 eht3<br>
+ovs-vsctl del-port br0 eth0<br>
+ovs-vsctl del-port br0 br0 //会报错<br>
+ovs-vsctl del-port br0 port0<br>
+删除bridge ovs-vsctl bel-br br0<br>
+查看bridge ovs-ofctl show br0<br>
+查看流表项 ovs-ofctl dump-flows br0</p>
+<h1 id="21天打卡计划-17">21天打卡计划</h1>
+<p>Day21<br>
+学习课程：《趣谈网络协议》第29讲<br>
+打卡笔记：<br>
+容器是一种比虚拟机更加轻量级的隔离方式，主要通过 namespace 和 cgroup 技术进行资源的隔离，namespace 用于负责看起来隔离，cgroup 用于负责用起来隔离。<br>
+增加routerns的命名空间 ip netns add routerns<br>
+转发开关打开 ip netns exec routerns sysctl -w net.ipv4.ip_forward=1<br>
+创建网卡连接在br0的网桥上 ovs-vsctl -- add-port br0 taprouter -- set Interface taprouter type=internal -- set Interface taprouter external-ids:iface-status=active -- set Interface taprouter external-ids:attached-mac=fa:16:3e:84:6e:cc<br>
+容器网络连接到物理网络的方式和虚拟机很像，通过桥接的方式实现一台物理机上的容器进行相互访问，如果要访问外网，最简单的方式还是通过 NAT。<br>
+和虚拟机一样，不同物理机上的容器需要相互通信，那么要知道容器的网络类型有4种</p>
+<ol>
+<li>host</li>
+<li>none</li>
+<li>bridge</li>
+<li>container<br>
+要使不同节点的容器互通，就要使用iptables规则做转换或者使用overlay方式，如kubernetes中CNI。</li>
+</ol>
 
             </div>
           </article>
